@@ -56,3 +56,4 @@ C:\Users\Shapi\Desktop\DevTurret\bin\Debug\net8.0-windows\runtimes\win-x86\nativ
 C:\Users\Shapi\Desktop\DevTurret\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140_atomic_wait.dll
 C:\Users\Shapi\Desktop\DevTurret\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140_codecvt_ids.dll
 C:\Users\Shapi\Desktop\DevTurret\bin\Debug\net8.0-windows\runtimes\win-x86\native\vcruntime140.dll
+C:\Users\Shapi\Desktop\DevTurret\obj\Debug\net8.0-windows\DevTurret.sourcelink.json

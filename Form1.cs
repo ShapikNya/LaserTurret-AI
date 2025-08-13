@@ -2,11 +2,14 @@ using DevTurret.Classes;
 using Emgu.CV;          
 using Emgu.CV.CvEnum;  
 using Emgu.CV.Structure;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace DevTurret
 {
     public partial class Form1 : Form
     {
+        const string logImgPath = @"C:\Users\Shapi\Desktop\DevTurret\Image\Log";
         public Form1()
         {
             InitializeComponent();
@@ -23,18 +26,13 @@ namespace DevTurret
                     try
                     {
                         imgPath.Text = openFileDialog.FileName;
-                        Bitmap image = new Bitmap(openFileDialog.FileName);
 
+                        MatBuilder builder = new MatBuilder(imgPath.Text);
+                        Mat changedImg = builder.SetCanny(10,100).Build();
 
-                        using (Mat imgMat = CvInvoke.Imread(openFileDialog.FileName))
-                        {
-                            Mat grayMat = new Mat();
-                            CvInvoke.CvtColor(imgMat, grayMat, ColorConversion.Bgr2Gray);
+                        ImageViewerForm viewForm = new ImageViewerForm(changedImg.ToBitmap()); viewForm.Show();
 
-                            ImageViewerForm origImg = new ImageViewerForm(image); origImg.Show();
-                            ImageViewerForm grayImg = new ImageViewerForm(grayMat.ToBitmap()); grayImg.Show();
-
-                        }
+                        changedImg.ToBitmap().Save(Path.Combine(logImgPath, "test.jpeg"), ImageFormat.Jpeg);
                     }
                     catch (Exception ex)
                     {
