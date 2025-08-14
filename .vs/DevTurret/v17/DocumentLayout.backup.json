@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\",
   "Documents": [
     {
@@ -41,6 +42,25 @@
     {
       "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret-dev\\classes\\videosourceclasses\\processors\\grayscaleprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:classes\\videosourceclasses\\processors\\grayscaleprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\Shapi\\Desktop\\DevTurret\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\devturret\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\devturret\\classes\\matbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:classes\\matbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\devturret\\interfaces\\imatbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:interfaces\\imatbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\devturret\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
     }
   ],
   "DocumentGroupContainers": [
@@ -56,6 +76,7 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Form1.cs*",
@@ -76,12 +97,22 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T14:02:37.024Z",
+=======
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\DevTurret\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\DevTurret\\Form1.cs*",
+              "RelativeToolTip": "Form1.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T16:21:56.497Z",
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MatBuilder.cs",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\MatBuilder.cs",
               "RelativeDocumentMoniker": "Classes\\MatBuilder.cs",
               "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\MatBuilder.cs",
@@ -89,10 +120,20 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T14:02:35.791Z",
+=======
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\DevTurret\\Classes\\MatBuilder.cs",
+              "RelativeDocumentMoniker": "Classes\\MatBuilder.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\DevTurret\\Classes\\MatBuilder.cs",
+              "RelativeToolTip": "Classes\\MatBuilder.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAowJ8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T20:02:13.032Z",
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 5,
               "Title": "VideoSource.cs",
               "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\VideoSource.cs",
@@ -115,19 +156,37 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T13:43:14.56Z",
+=======
+              "DocumentIndex": 2,
+              "Title": "IMatBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\DevTurret\\Interfaces\\IMatBuilder.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IMatBuilder.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\DevTurret\\Interfaces\\IMatBuilder.cs",
+              "RelativeToolTip": "Interfaces\\IMatBuilder.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBMAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T19:55:33.887Z",
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+=======
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\DevTurret\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\DevTurret\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
               "RelativeToolTip": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-13T19:15:29.762Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -180,6 +239,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T13:39:18.627Z",
               "EditorCaption": ""
+=======
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
             }
           ]
         }

@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevTurret")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c6fbadbe8299b3c13d1da5f8fec2ac2e9035b80")]
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
 [assembly: System.Reflection.AssemblyProductAttribute("DevTurret")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevTurret")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

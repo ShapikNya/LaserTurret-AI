@@ -30,7 +30,10 @@
         {
             openBtn = new Button();
             imgPath = new Label();
+<<<<<<< HEAD
             cameraBtn = new Button();
+=======
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
             SuspendLayout();
             // 
             // openBtn
@@ -54,6 +57,7 @@
             imgPath.TabIndex = 1;
             imgPath.Text = "Path: ";
             // 
+<<<<<<< HEAD
             // cameraBtn
             // 
             cameraBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -65,12 +69,17 @@
             cameraBtn.UseVisualStyleBackColor = true;
             cameraBtn.Click += cameraBtn_Click;
             // 
+=======
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+<<<<<<< HEAD
             Controls.Add(cameraBtn);
+=======
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
             Controls.Add(imgPath);
             Controls.Add(openBtn);
             Name = "Form1";
@@ -83,6 +92,9 @@
 
         private Button openBtn;
         private Label imgPath;
+<<<<<<< HEAD
         private Button cameraBtn;
+=======
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
     }
 }

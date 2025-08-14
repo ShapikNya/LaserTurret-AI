@@ -1,6 +1,9 @@
 using DevTurret.Classes;
+<<<<<<< HEAD
 using DevTurret.Classes.VideoSource;
 using DevTurret.Classes.VideoSourceClasses;
+=======
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
 using Emgu.CV;          
 using Emgu.CV.CvEnum;  
 using Emgu.CV.Structure;
@@ -30,7 +33,11 @@ namespace DevTurret
                         imgPath.Text = openFileDialog.FileName;
 
                         MatBuilder builder = new MatBuilder(imgPath.Text);
+<<<<<<< HEAD
                         Mat changedImg = builder.SetCanny(10, 100).Build();
+=======
+                        Mat changedImg = builder.SetCanny(10,100).Build();
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
 
                         ImageViewerForm viewForm = new ImageViewerForm(changedImg.ToBitmap()); viewForm.Show();
 
@@ -43,6 +50,7 @@ namespace DevTurret
                 }
             }
         }
+<<<<<<< HEAD
 
         private void cameraBtn_Click(object sender, EventArgs e)
         {
@@ -69,5 +77,7 @@ namespace DevTurret
                     break;
             }
         }
+=======
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
     }
 }

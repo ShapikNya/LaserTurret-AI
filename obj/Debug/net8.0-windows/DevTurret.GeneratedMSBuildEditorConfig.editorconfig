@@ -14,7 +14,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DevTurret
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Shapi\Desktop\Turret-dev\
+=======
+build_property.ProjectDir = C:\Users\Shapi\Desktop\DevTurret\
+>>>>>>> a20105c934463e9ad5cdeee966de2f06756b45da
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false
