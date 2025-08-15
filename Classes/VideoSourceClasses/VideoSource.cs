@@ -26,6 +26,9 @@ namespace DevTurret.Classes.VideoSourceClasses
             return _frame.IsEmpty ? null : _frame;
         }
 
+        /*_capture.Read(_frame);
+            return _frame.IsEmpty? null : _frame.Clone(); // Возвращаем клон*/
+
         public void Dispose()
         {
             _frame?.Dispose();

@@ -11,10 +11,11 @@ namespace DevTurret.Classes.VideoSource
     public class VideoProcessor
     {
         private readonly List<IFrameProcessor> _processors;
+        private readonly List<IDetectProcessor> _detectors;
 
-        public VideoProcessor(List<IFrameProcessor> processors)
+        public VideoProcessor(List<IFrameProcessor> processors, List<IDetectProcessor> detectors)
         {
-            _processors = processors;
+            _processors = processors; if (detectors != null) _detectors = detectors;
         }
 
         public void ProcessFrame(Mat frame)
@@ -24,5 +25,25 @@ namespace DevTurret.Classes.VideoSource
                 processor.Process(frame); 
             }
         }
+
+        public void ProcessFrame(Mat frame, List<Rectangle> rectangles)
+        {
+            foreach (var processor in _processors)
+            {
+                processor.Process(frame);
+            }
+
+            foreach (var detector in _detectors)
+            {
+                var faces = detector?.GetFaces(frame); 
+
+                if (faces != null)
+                {
+                    rectangles.AddRange(faces);
+                }
+            }
+        }
+
+
     }
 }

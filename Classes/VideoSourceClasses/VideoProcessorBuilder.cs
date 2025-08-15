@@ -1,4 +1,5 @@
 ﻿using DevTurret.Classes.VideoSource.Processors;
+using DevTurret.Classes.VideoSourceClasses.Processors;
 using DevTurret.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,7 @@ namespace DevTurret.Classes.VideoSource
     {
         private List<IFrameProcessor> _processors = new List<IFrameProcessor>();
 
-        public VideoProcessorBuilder AddResize(int width, int height)
-        {
-            _processors.Add(new ResizeProcessor(new Size(width, height)));
-            return this;
-        }
-
+        private List<IDetectProcessor> _detectors = new List<IDetectProcessor>();
         public VideoProcessorBuilder AddGrayscale()
         {
             _processors.Add(new GrayscaleProcessor());
@@ -36,9 +32,21 @@ namespace DevTurret.Classes.VideoSource
             return this;
         }
 
+        public VideoProcessorBuilder AddDetector(IDetectProcessor detector)
+        {
+            _detectors.Add(detector);
+            return this;
+        }
+
+        public VideoProcessorBuilder AddGaussianBlur(int kernelSize = 5)
+        {
+            _processors.Add(new GaussianBlurProcessor(kernelSize));
+            return this;
+        }
+
         public VideoProcessor Build()
         {
-            return new VideoProcessor(_processors);
+            return new VideoProcessor(_processors, _detectors);
         }
 
     }
