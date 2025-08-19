@@ -1,34 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\",
+  "WorkspaceRootPath": "C:\\Users\\Shapi\\Desktop\\Turret\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret-dev\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret-dev\\classes\\videosourceclasses\\videosource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret\\classes\\videosourceclasses\\videosource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:classes\\videosourceclasses\\videosource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret-dev\\classes\\videosourceclasses\\videoprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret\\classes\\bitmapconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:classes\\bitmapconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret\\classes\\videosourceclasses\\videoprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:classes\\videosourceclasses\\videoprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret-dev\\classes\\videosourceclasses\\processors\\detectfaceprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:classes\\videosourceclasses\\processors\\detectfaceprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret-dev\\classes\\videosourceclasses\\videoprocessorbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:classes\\videosourceclasses\\videoprocessorbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret-dev\\classes\\videosourceclasses\\processors\\gaussianblurprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:classes\\videosourceclasses\\processors\\gaussianblurprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|c:\\users\\shapi\\desktop\\turret-dev\\interfaces\\idetectprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A573334B-070D-4E3F-AB50-874C7D482381}|DevTurret.csproj|solutionrelative:interfaces\\idetectprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,11 +36,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Form1.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAADgv2EAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAgwLMAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T13:54:15.103Z",
               "IsPinned": true,
@@ -56,80 +48,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DetectFaceProcessor.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\Processors\\DetectFaceProcessor.cs",
-              "RelativeDocumentMoniker": "Classes\\VideoSourceClasses\\Processors\\DetectFaceProcessor.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\Processors\\DetectFaceProcessor.cs",
-              "RelativeToolTip": "Classes\\VideoSourceClasses\\Processors\\DetectFaceProcessor.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T21:29:12.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-19T22:12:31.844Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "VideoProcessor.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\VideoProcessor.cs",
-              "RelativeDocumentMoniker": "Classes\\VideoSourceClasses\\VideoProcessor.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\VideoProcessor.cs",
-              "RelativeToolTip": "Classes\\VideoSourceClasses\\VideoProcessor.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T22:34:48.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "VideoSource.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\VideoSource.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret\\Classes\\VideoSourceClasses\\VideoSource.cs",
               "RelativeDocumentMoniker": "Classes\\VideoSourceClasses\\VideoSource.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\VideoSource.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret\\Classes\\VideoSourceClasses\\VideoSource.cs",
               "RelativeToolTip": "Classes\\VideoSourceClasses\\VideoSource.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T23:39:29.144Z",
+              "WhenOpened": "2025-08-19T22:14:05.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GaussianBlurProcessor.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\Processors\\GaussianBlurProcessor.cs",
-              "RelativeDocumentMoniker": "Classes\\VideoSourceClasses\\Processors\\GaussianBlurProcessor.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\Processors\\GaussianBlurProcessor.cs",
-              "RelativeToolTip": "Classes\\VideoSourceClasses\\Processors\\GaussianBlurProcessor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BitmapConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret\\Classes\\BitmapConverter.cs",
+              "RelativeDocumentMoniker": "Classes\\BitmapConverter.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret\\Classes\\BitmapConverter.cs",
+              "RelativeToolTip": "Classes\\BitmapConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T23:38:20.671Z",
+              "WhenOpened": "2025-08-19T22:14:02.972Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "VideoProcessorBuilder.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\VideoProcessorBuilder.cs",
-              "RelativeDocumentMoniker": "Classes\\VideoSourceClasses\\VideoProcessorBuilder.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Classes\\VideoSourceClasses\\VideoProcessorBuilder.cs",
-              "RelativeToolTip": "Classes\\VideoSourceClasses\\VideoProcessorBuilder.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAzwCUAAAAYAAAAAAAAAA==",
+              "Title": "VideoProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret\\Classes\\VideoSourceClasses\\VideoProcessor.cs",
+              "RelativeDocumentMoniker": "Classes\\VideoSourceClasses\\VideoProcessor.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret\\Classes\\VideoSourceClasses\\VideoProcessor.cs",
+              "RelativeToolTip": "Classes\\VideoSourceClasses\\VideoProcessor.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T13:39:55.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IDetectProcessor.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Interfaces\\IDetectProcessor.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IDetectProcessor.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\Turret-dev\\Interfaces\\IDetectProcessor.cs",
-              "RelativeToolTip": "Interfaces\\IDetectProcessor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T22:49:35.471Z",
+              "WhenOpened": "2025-08-19T22:13:57.656Z",
               "EditorCaption": ""
             }
           ]

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DevTurret.Classes.VideoSourceClasses
 {
-    public class VideoSource
+    public class VideoSource : IDisposable
     {
         private VideoCapture _capture;
         public Mat _frame; 

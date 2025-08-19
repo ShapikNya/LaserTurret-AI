@@ -4,17 +4,19 @@ using DevTurret.Classes.VideoSourceClasses;
 using DevTurret.Classes.VideoSourceClasses.Processors;
 using Emgu.CV;          
 using Emgu.CV.CvEnum;  
+using Emgu.CV.Reg;
 using Emgu.CV.Structure;
+using SkiaSharp;  // Для работы с изображениями (загрузка, ресайз, отрисовка)
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using SkiaSharp;  // Для работы с изображениями (загрузка, ресайз, отрисовка)
+using System.Runtime.InteropServices;
 using YoloDotNet;  // Основная библиотека YoloDotNet
-using YoloDotNet.Enums;  // Для перечислений, как типы ресайза
-using YoloDotNet.Models;  // Для моделей результатов (ObjectDetectionModel и т.д.)
-using YoloDotNet.Extensions;  // Для расширений, как Draw()
-using static System.Net.Mime.MediaTypeNames;
 using YoloDotNet.Core;
+using YoloDotNet.Enums;  // Для перечислений, как типы ресайза
+using YoloDotNet.Extensions;  // Для расширений, как Draw()
+using YoloDotNet.Models;  // Для моделей результатов (ObjectDetectionModel и т.д.)
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DevTurret
 {
@@ -80,7 +82,7 @@ namespace DevTurret
 
             string windowName = "Webcam";
             CvInvoke.NamedWindow(windowName);
-
+            Stopwatch stopwatch = Stopwatch.StartNew(); double frameTime, fps;
             while (true)
             {
                 processor.ProcessFrame(videoSource.GetNextFrame(), rect);
@@ -92,9 +94,12 @@ namespace DevTurret
                 }
 
                 CvInvoke.Imshow(windowName, videoSource._frame);
+                frameTime = stopwatch.Elapsed.TotalSeconds;
+                stopwatch.Restart(); fps = 1 / frameTime;
 
                 rect.Clear();
 
+                fpsLabel.Text = $"FPS: {fps}";
                 if (CvInvoke.WaitKey(30) == 'q') // 30 мс = ~33 кадра/с
                     break;
 
@@ -122,6 +127,7 @@ namespace DevTurret
 
                     var results = yolo.RunObjectDetection(image, confidence: 0.25, iou: 0.7);
 
+
                     image.Draw(results);
 
                     // --- исправленная часть ---
@@ -130,7 +136,82 @@ namespace DevTurret
                                             // --------------------------
 
                     yolo.Dispose();
+
+
+                    /*
+                                        // Создаём канвас для рисования
+                                        using var canvas = new SKCanvas(image);
+                                        using var paint = new SKPaint
+                                        {
+                                            Color = SKColors.Red,  // Цвет точки (красный)
+                                            Style = SKPaintStyle.Fill,  // Заполненная точка
+                                            IsAntialias = true  // Сглаживание
+                                        };
+
+                                        // Рисуем точку в центре каждого bounding box
+                                        foreach (var detection in results)
+                                        {
+                                            var centerX = detection.BoundingBox.MidX;
+                                            var centerY = detection.BoundingBox.MidY;
+                                            canvas.DrawCircle(centerX, centerY, 15, paint);  // Рисуем круг радиусом 5 пикселей
+                                        }
+                                        string outputFile = Path.Combine(logImgPath, "yolo_result.jpg");
+                                        image.Save(outputFile);
+                                        yolo.Dispose();
+                    */
                 }
+            }
+        }
+
+        private void cameraYoloBtn_Click(object sender, EventArgs e)
+        {
+
+
+            using (VideoSource videoSource = new VideoSource())
+            {
+                using (var yolo = new Yolo(new YoloOptions
+                {
+                    OnnxModel = modelPath,
+                    ImageResize = ImageResize.Proportional,
+                    ExecutionProvider = new CudaExecutionProvider(GpuId: 0, PrimeGpu: true)
+                }))
+                {
+                    Mat frame = new();
+                    Stopwatch stopwatch = Stopwatch.StartNew(); double frameTime, fps;
+                    while (true)
+                    {
+                        frame = videoSource.GetNextFrame();
+                        using Bitmap bitmap = frame.ToBitmap();
+                        using var stream = new MemoryStream();
+                        bitmap.Save(stream, ImageFormat.Jpeg); // Сохраняем в поток
+                        stream.Position = 0; // Сбрасываем позицию
+                        using var image = SKBitmap.Decode(stream); // Декодируем в SKBitmap
+
+                        var results = yolo.RunObjectDetection(image, confidence: 0.25, iou: 0.7);
+
+                        image.Draw(results);
+
+                        // Конвертация SKBitmap в Mat
+                        using var outputMat = new Mat(image.Height, image.Width, DepthType.Cv8U, 4); // RGBA
+                        var pixels = image.Bytes; // Пиксели в формате RGBA
+                        Marshal.Copy(pixels, 0, outputMat.DataPointer, pixels.Length); // Копируем пиксели
+                        using var bgrMat = new Mat();
+                        CvInvoke.CvtColor(outputMat, bgrMat, ColorConversion.Rgba2Bgr); // RGBA -> BGR для Imshow
+
+                        // Отображение в окне
+
+                        CvInvoke.Imshow("Detection Output", bgrMat);
+                        frameTime = stopwatch.Elapsed.TotalSeconds;
+                        stopwatch.Restart(); fps = 1/ frameTime;   
+                        
+                        if (CvInvoke.WaitKey(30) == 'q') // 30 мс = ~33 кадра/с
+                            break;
+                        fpsLabel.Text = $"FPS: {fps}";
+                    }
+                    frame.Dispose();
+                    
+                }    
+
             }
         }
     }

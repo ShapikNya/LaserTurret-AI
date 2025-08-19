@@ -36,6 +36,7 @@
             cameraYoloBtn = new Button();
             label2 = new Label();
             label3 = new Label();
+            fpsLabel = new Label();
             SuspendLayout();
             // 
             // openBtn
@@ -99,6 +100,7 @@
             cameraYoloBtn.TabIndex = 5;
             cameraYoloBtn.Text = "Camera";
             cameraYoloBtn.UseVisualStyleBackColor = true;
+            cameraYoloBtn.Click += cameraYoloBtn_Click;
             // 
             // label2
             // 
@@ -120,11 +122,22 @@
             label3.TabIndex = 7;
             label3.Text = "Path: ";
             // 
+            // fpsLabel
+            // 
+            fpsLabel.AutoSize = true;
+            fpsLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            fpsLabel.Location = new Point(21, 354);
+            fpsLabel.Name = "fpsLabel";
+            fpsLabel.Size = new Size(48, 28);
+            fpsLabel.TabIndex = 8;
+            fpsLabel.Text = "FPS:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(fpsLabel);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(cameraYoloBtn);
@@ -149,5 +162,6 @@
         private Button cameraYoloBtn;
         private Label label2;
         private Label label3;
+        private Label fpsLabel;
     }
 }
