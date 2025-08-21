@@ -1,9 +1,0 @@
-# Visual Studio
-.vs/
-*.db
-
-# Build
-bin/
-obj/
-*.pdb
-*.exe
