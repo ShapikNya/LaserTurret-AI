@@ -2387,11 +2387,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\DevTurret.csproj",
+      "projectUniqueName": "C:\\Users\\Shapi\\Desktop\\dev\\DevTurret.csproj",
       "projectName": "DevTurret",
-      "projectPath": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\DevTurret.csproj",
+      "projectPath": "C:\\Users\\Shapi\\Desktop\\dev\\DevTurret.csproj",
       "packagesPath": "C:\\Users\\Shapi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\obj\\",
+      "outputPath": "C:\\Users\\Shapi\\Desktop\\dev\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

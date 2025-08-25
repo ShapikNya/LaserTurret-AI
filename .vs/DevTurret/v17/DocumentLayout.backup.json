@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\",
+  "WorkspaceRootPath": "C:\\Users\\Shapi\\Desktop\\dev\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev1\\turret\\classes\\buffer\\framebuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\buffer\\framebuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev1\\turret\\classes\\buffer\\frameslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\buffer\\frameslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev1\\turret\\devturret.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:devturret.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev1\\turret\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev\\classes\\objectdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\objectdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev\\classes\\detectoroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\detectoroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev\\classes\\imageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\imageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,51 +31,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrameBuffer.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\classes\\Buffer\\FrameBuffer.cs",
-              "RelativeDocumentMoniker": "classes\\Buffer\\FrameBuffer.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\classes\\Buffer\\FrameBuffer.cs",
-              "RelativeToolTip": "classes\\Buffer\\FrameBuffer.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAAFMAAAAJAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T23:05:17.974Z",
+              "WhenOpened": "2025-08-22T22:04:51.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FrameSlot.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\classes\\Buffer\\FrameSlot.cs",
-              "RelativeDocumentMoniker": "classes\\Buffer\\FrameSlot.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\classes\\Buffer\\FrameSlot.cs",
-              "RelativeToolTip": "classes\\Buffer\\FrameSlot.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Title": "ObjectDetector.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ObjectDetector.cs",
+              "RelativeDocumentMoniker": "classes\\ObjectDetector.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ObjectDetector.cs",
+              "RelativeToolTip": "classes\\ObjectDetector.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T23:02:36.876Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DevTurret.csproj",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\DevTurret.csproj",
-              "RelativeDocumentMoniker": "DevTurret.csproj",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\DevTurret.csproj",
-              "RelativeToolTip": "DevTurret.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-22T22:05:48.896Z"
+              "WhenOpened": "2025-08-24T23:45:32.075Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev1\\Turret\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Title": "ImageConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ImageConverter.cs",
+              "RelativeDocumentMoniker": "classes\\ImageConverter.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ImageConverter.cs",
+              "RelativeToolTip": "classes\\ImageConverter.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T22:04:51.73Z"
+              "WhenOpened": "2025-08-24T23:54:31.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DetectorOptions.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\DetectorOptions.cs",
+              "RelativeDocumentMoniker": "classes\\DetectorOptions.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\DetectorOptions.cs",
+              "RelativeToolTip": "classes\\DetectorOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T23:44:05.154Z",
+              "EditorCaption": ""
             }
           ]
         }
