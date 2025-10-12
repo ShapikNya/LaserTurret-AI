@@ -1,4 +1,4 @@
-using DevTurret.Classes;
+Ôªøusing DevTurret.Classes;
 using DevTurret.Classes.VideoSource;
 using DevTurret.Classes.VideoSourceClasses;
 using DevTurret.Classes.VideoSourceClasses.Processors;
@@ -6,26 +6,31 @@ using Emgu.CV;
 using Emgu.CV.CvEnum;  
 using Emgu.CV.Reg;
 using Emgu.CV.Structure;
-using SkiaSharp;  // ƒÎˇ ‡·ÓÚ˚ Ò ËÁÓ·‡ÊÂÌËˇÏË (Á‡„ÛÁÍ‡, ÂÒ‡ÈÁ, ÓÚËÒÓ‚Í‡)
+using Emgu.CV.Util;
+using SkiaSharp;  // –î–ª—è —Ä–∞–±–æ—Ç—ã —Å –∏–∑–æ–±—Ä–∞–∂–µ–Ω–∏—è–º–∏ (–∑–∞–≥—Ä—É–∑–∫–∞, —Ä–µ—Å–∞–π–∑, –æ—Ç—Ä–∏—Å–æ–≤–∫–∞)
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Reflection;
 using System.Runtime.InteropServices;
-using YoloDotNet;  // ŒÒÌÓ‚Ì‡ˇ ·Ë·ÎËÓÚÂÍ‡ YoloDotNet
+using System.Text;
+using YoloDotNet;  // –û—Å–Ω–æ–≤–Ω–∞—è –±–∏–±–ª–∏–æ—Ç–µ–∫–∞ YoloDotNet
 using YoloDotNet.Core;
-using YoloDotNet.Enums;  // ƒÎˇ ÔÂÂ˜ËÒÎÂÌËÈ, Í‡Í ÚËÔ˚ ÂÒ‡ÈÁ‡
-using YoloDotNet.Extensions;  // ƒÎˇ ‡Ò¯ËÂÌËÈ, Í‡Í Draw()
-using YoloDotNet.Models;  // ƒÎˇ ÏÓ‰ÂÎÂÈ ÂÁÛÎ¸Ú‡ÚÓ‚ (ObjectDetectionModel Ë Ú.‰.)
+using YoloDotNet.Enums;  // –î–ª—è –ø–µ—Ä–µ—á–∏—Å–ª–µ–Ω–∏–π, –∫–∞–∫ —Ç–∏–ø—ã —Ä–µ—Å–∞–π–∑–∞
+using YoloDotNet.Extensions;  // –î–ª—è —Ä–∞—Å—à–∏—Ä–µ–Ω–∏–π, –∫–∞–∫ Draw()
+using YoloDotNet.Models;  // –î–ª—è –º–æ–¥–µ–ª–µ–π —Ä–µ–∑—É–ª—å—Ç–∞—Ç–æ–≤ (ObjectDetectionModel –∏ —Ç.–¥.)
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.DataFormats;
 
 namespace DevTurret
 {
-    public partial class Form1 : Form
+    public partial class servoBtn : Form
     {
-        const string logImgPath = @"C:\Users\Shapi\Desktop\Turret\Log";
-        const string faceCascadePath = @"C:\Users\Shapi\Desktop\Turret\Haar Cascades\haarcascade_frontalface_default.xml";
-        const string modelPath = @"C:\Users\Shapi\Desktop\Turret\Models\yolo11n_fixed.onnx";
-        public Form1()
+        const string PhtsPath = @"C:\Users\Shapi\Desktop\SandBox\Log";
+        const string logImgPath = @"C:\Users\Shapi\Desktop\SandBox\Log";
+        const string faceCascadePath = @"C:\Users\Shapi\Desktop\SandBox\HaarCascades\haarcascade_frontalface_default.xml";
+        const string modelPath = @"C:\Users\Shapi\Desktop\SandBox\Models\yolo11n_fixed.onnx";
+        public servoBtn()
         {
             InitializeComponent();
         }
@@ -51,7 +56,7 @@ namespace DevTurret
 
                         foreach (Rectangle face in faces)
                         {
-                            CvInvoke.Rectangle(changedImg, face, new MCvScalar(0, 255, 0), 10); // «ÂÎ∏Ì˚È, ÚÓÎ˘ËÌ‡ 2
+                            CvInvoke.Rectangle(changedImg, face, new MCvScalar(0, 255, 0), 10); // –ó–µ–ª—ë–Ω—ã–π, —Ç–æ–ª—â–∏–Ω–∞ 2
                         }
 
 
@@ -63,7 +68,7 @@ namespace DevTurret
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Œ¯Ë·Í‡: {ex.Message}");
+                        MessageBox.Show($"–û—à–∏–±–∫–∞: {ex.Message}");
                     }
                 }
             }
@@ -90,7 +95,7 @@ namespace DevTurret
 
                 foreach (Rectangle face in rect)
                 {
-                    CvInvoke.Rectangle(videoSource._frame, face, new MCvScalar(0, 255, 0), 10); // «ÂÎ∏Ì˚È, ÚÓÎ˘ËÌ‡ 10
+                    CvInvoke.Rectangle(videoSource._frame, face, new MCvScalar(0, 255, 0), 10); // –ó–µ–ª—ë–Ω—ã–π, —Ç–æ–ª—â–∏–Ω–∞ 10
                 }
 
                 CvInvoke.Imshow(windowName, videoSource._frame);
@@ -100,7 +105,7 @@ namespace DevTurret
                 rect.Clear();
 
                 fpsLabel.Text = $"FPS: {fps}";
-                if (CvInvoke.WaitKey(30) == 'q') // 30 ÏÒ = ~33 Í‡‰‡/Ò
+                if (CvInvoke.WaitKey(1) == 'q') // 30 –º—Å = ~33 –∫–∞–¥—Ä–∞/—Å
                     break;
 
             }
@@ -130,30 +135,30 @@ namespace DevTurret
 
                     image.Draw(results);
 
-                    // --- ËÒÔ‡‚ÎÂÌÌ‡ˇ ˜‡ÒÚ¸ ---
+                    // --- –∏—Å–ø—Ä–∞–≤–ª–µ–Ω–Ω–∞—è —á–∞—Å—Ç—å ---
                     string outputFile = Path.Combine(logImgPath, "yolo_result.jpg");
-                    image.Save(outputFile); // ÒÓı‡ÌˇÂÏ Ó·‡·ÓÚ‡ÌÌÓÂ ËÁÓ·‡ÊÂÌËÂ
+                    image.Save(outputFile); // —Å–æ—Ö—Ä–∞–Ω—è–µ–º –æ–±—Ä–∞–±–æ—Ç–∞–Ω–Ω–æ–µ –∏–∑–æ–±—Ä–∞–∂–µ–Ω–∏–µ
                                             // --------------------------
 
                     yolo.Dispose();
 
 
                     /*
-                                        // —ÓÁ‰‡∏Ï Í‡Ì‚‡Ò ‰Îˇ ËÒÓ‚‡ÌËˇ
+                                        // –°–æ–∑–¥–∞—ë–º –∫–∞–Ω–≤–∞—Å –¥–ª—è —Ä–∏—Å–æ–≤–∞–Ω–∏—è
                                         using var canvas = new SKCanvas(image);
                                         using var paint = new SKPaint
                                         {
-                                            Color = SKColors.Red,  // ÷‚ÂÚ ÚÓ˜ÍË (Í‡ÒÌ˚È)
-                                            Style = SKPaintStyle.Fill,  // «‡ÔÓÎÌÂÌÌ‡ˇ ÚÓ˜Í‡
-                                            IsAntialias = true  // —„Î‡ÊË‚‡ÌËÂ
+                                            Color = SKColors.Red,  // –¶–≤–µ—Ç —Ç–æ—á–∫–∏ (–∫—Ä–∞—Å–Ω—ã–π)
+                                            Style = SKPaintStyle.Fill,  // –ó–∞–ø–æ–ª–Ω–µ–Ω–Ω–∞—è —Ç–æ—á–∫–∞
+                                            IsAntialias = true  // –°–≥–ª–∞–∂–∏–≤–∞–Ω–∏–µ
                                         };
 
-                                        // –ËÒÛÂÏ ÚÓ˜ÍÛ ‚ ˆÂÌÚÂ Í‡Ê‰Ó„Ó bounding box
+                                        // –†–∏—Å—É–µ–º —Ç–æ—á–∫—É –≤ —Ü–µ–Ω—Ç—Ä–µ –∫–∞–∂–¥–æ–≥–æ bounding box
                                         foreach (var detection in results)
                                         {
                                             var centerX = detection.BoundingBox.MidX;
                                             var centerY = detection.BoundingBox.MidY;
-                                            canvas.DrawCircle(centerX, centerY, 15, paint);  // –ËÒÛÂÏ ÍÛ„ ‡‰ËÛÒÓÏ 5 ÔËÍÒÂÎÂÈ
+                                            canvas.DrawCircle(centerX, centerY, 15, paint);  // –†–∏—Å—É–µ–º –∫—Ä—É–≥ —Ä–∞–¥–∏—É—Å–æ–º 5 –ø–∏–∫—Å–µ–ª–µ–π
                                         }
                                         string outputFile = Path.Combine(logImgPath, "yolo_result.jpg");
                                         image.Save(outputFile);
@@ -183,36 +188,313 @@ namespace DevTurret
                         frame = videoSource.GetNextFrame();
                         using Bitmap bitmap = frame.ToBitmap();
                         using var stream = new MemoryStream();
-                        bitmap.Save(stream, ImageFormat.Jpeg); // —Óı‡ÌˇÂÏ ‚ ÔÓÚÓÍ
-                        stream.Position = 0; // —·‡Ò˚‚‡ÂÏ ÔÓÁËˆË˛
-                        using var image = SKBitmap.Decode(stream); // ƒÂÍÓ‰ËÛÂÏ ‚ SKBitmap
+                        bitmap.Save(stream, ImageFormat.Jpeg); // –°–æ—Ö—Ä–∞–Ω—è–µ–º –≤ –ø–æ—Ç–æ–∫
+                        stream.Position = 0; // –°–±—Ä–∞—Å—ã–≤–∞–µ–º –ø–æ–∑–∏—Ü–∏—é
+                        using var image = SKBitmap.Decode(stream); // –î–µ–∫–æ–¥–∏—Ä—É–µ–º –≤ SKBitmap
 
                         var results = yolo.RunObjectDetection(image, confidence: 0.25, iou: 0.7);
 
                         image.Draw(results);
 
-                        //  ÓÌ‚ÂÚ‡ˆËˇ SKBitmap ‚ Mat
+                        // –ö–æ–Ω–≤–µ—Ä—Ç–∞—Ü–∏—è SKBitmap –≤ Mat
                         using var outputMat = new Mat(image.Height, image.Width, DepthType.Cv8U, 4); // RGBA
-                        var pixels = image.Bytes; // œËÍÒÂÎË ‚ ÙÓÏ‡ÚÂ RGBA
-                        Marshal.Copy(pixels, 0, outputMat.DataPointer, pixels.Length); //  ÓÔËÛÂÏ ÔËÍÒÂÎË
+                        var pixels = image.Bytes; // –ü–∏–∫—Å–µ–ª–∏ –≤ —Ñ–æ—Ä–º–∞—Ç–µ RGBA
+                        Marshal.Copy(pixels, 0, outputMat.DataPointer, pixels.Length); // –ö–æ–ø–∏—Ä—É–µ–º –ø–∏–∫—Å–µ–ª–∏
                         using var bgrMat = new Mat();
-                        CvInvoke.CvtColor(outputMat, bgrMat, ColorConversion.Rgba2Bgr); // RGBA -> BGR ‰Îˇ Imshow
+                        CvInvoke.CvtColor(outputMat, bgrMat, ColorConversion.Rgba2Bgr); // RGBA -> BGR –¥–ª—è Imshow
 
-                        // ŒÚÓ·‡ÊÂÌËÂ ‚ ÓÍÌÂ
+                        // –û—Ç–æ–±—Ä–∞–∂–µ–Ω–∏–µ –≤ –æ–∫–Ω–µ
 
                         CvInvoke.Imshow("Detection Output", bgrMat);
                         frameTime = stopwatch.Elapsed.TotalSeconds;
-                        stopwatch.Restart(); fps = 1/ frameTime;   
-                        
-                        if (CvInvoke.WaitKey(30) == 'q') // 30 ÏÒ = ~33 Í‡‰‡/Ò
+                        stopwatch.Restart(); fps = 1 / frameTime;
+
+                        if (CvInvoke.WaitKey(1) == 'q')
                             break;
                         fpsLabel.Text = $"FPS: {fps}";
                     }
                     frame.Dispose();
-                    
-                }    
+
+                }
 
             }
         }
+
+        private void cameraTestBtn_Click(object sender, EventArgs e)
+        {
+            using (var camera = new VideoSource())
+            {
+                Stopwatch stopwatch = Stopwatch.StartNew(); double frameTime;
+                while (true)
+                {
+                    //CvInvoke.Imshow("Camera", camera.GetNextFrame());
+                    camera.GetNextFrame();
+                    frameTime = stopwatch.Elapsed.TotalSeconds;
+                    fpsLabel.Text = $"FPS: {1 / frameTime}";
+                    stopwatch.Restart();
+
+
+                    if (CvInvoke.WaitKey(1) == 'q') break;
+                }
+
+
+                //–ù–£–ñ–ù–û–ï
+                /*        Mat frame = camera.GetNextFrame();
+                        Mat matBGRA = new Mat(480, 640, DepthType.Cv8U, 4);
+                        SKBitmap skBitmap = new SKBitmap(640, 480, SKColorType.Bgra8888, SKAlphaType.Premul);
+
+                        CvInvoke.CvtColor(frame, matBGRA, ColorConversion.Bgr2Bgra);
+
+                        // Unsafe copy —á–µ—Ä–µ–∑ Span<byte>
+                        unsafe
+                        {
+                            byte* srcPtr = (byte*)matBGRA.DataPointer.ToPointer();
+                            byte* dstPtr = (byte*)skBitmap.GetPixels().ToPointer();
+                            int bytes = 640 * 480 * 4;
+                            Buffer.MemoryCopy(srcPtr, dstPtr, bytes, bytes);
+                        }
+
+                        // YOLO
+                        using var yolo = new Yolo(new YoloOptions
+                        {
+                            OnnxModel = modelPath,
+                            ImageResize = ImageResize.Proportional,
+                            ExecutionProvider = new CudaExecutionProvider(GpuId: 0, PrimeGpu: true)
+                        });
+
+                        var results = yolo.RunObjectDetection(skBitmap, confidence: 0.25, iou: 0.7);
+
+
+
+
+
+                        skBitmap.Draw(results);
+
+                        string outputFile = Path.Combine(logImgPath, "yolo_result.jpg");
+                        skBitmap.Save(outputFile);
+                        yolo.Dispose();
+                    }*/
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (VideoSource videoSource = new VideoSource())
+            {
+                int frameCount = 0;
+                while (true)
+                {
+                    if (CvInvoke.WaitKey(1) == 'q') { break; }
+                    Mat frame = videoSource.GetNextFrame();
+                    CvInvoke.Imshow("Detection Output", frame);
+                    if (CvInvoke.WaitKey(1) == 's')
+                    {
+                        if (frameCount == 15) break;
+                        string outputFile = Path.Combine(PhtsPath, "pht" + frameCount.ToString() + ".jpg");
+                        frame.Save(outputFile);
+                        MessageBox.Show("pht" + frameCount.ToString() + ".jpg is saved!");
+                        frameCount++;
+                    }
+                }
+
+            }
+        }
+
+        private void calibBtn_Click(object sender, EventArgs e)
+        {
+            int boardWidth = 6;  // —á–∏—Å–ª–æ –≤–Ω—É—Ç—Ä–µ–Ω–Ω–∏—Ö —É–≥–ª–æ–≤ –ø–æ –≥–æ—Ä–∏–∑–æ–Ω—Ç–∞–ª–∏
+            int boardHeight = 4; // —á–∏—Å–ª–æ –≤–Ω—É—Ç—Ä–µ–Ω–Ω–∏—Ö —É–≥–ª–æ–≤ –ø–æ –≤–µ—Ä—Ç–∏–∫–∞–ª–∏
+            float squareSize = 0.015f; // —Ä–∞–∑–º–µ—Ä –∫–ª–µ—Ç–∫–∏ –≤ –º–µ—Ç—Ä–∞—Ö (1.5 —Å–º)
+            int phtWithCorners = 0;
+
+            Size patternSize = new Size(boardWidth, boardHeight);
+
+            List<VectorOfPoint3D32F> objectPoints = new List<VectorOfPoint3D32F>();
+            List<VectorOfPointF> imagePoints = new List<VectorOfPointF>();
+
+            VectorOfPoint3D32F objPts = new VectorOfPoint3D32F();
+            for (int i = 0; i < boardHeight; i++) // —Å—Ç—Ä–æ–∫–∏
+            {
+                for (int j = 0; j < boardWidth; j++) // —Å—Ç–æ–ª–±—Ü—ã
+                {
+                    objPts.Push(new MCvPoint3D32f[] { new MCvPoint3D32f(j * squareSize, i * squareSize, 0f) });
+                }
+            }
+
+            string[] images = System.IO.Directory.GetFiles(PhtsPath, "*.jpg");
+
+            foreach (string imagePath in images)
+            {
+                Mat img = CvInvoke.Imread(imagePath, ImreadModes.AnyColor);
+                Mat gray = new Mat();
+                CvInvoke.CvtColor(img, gray, ColorConversion.Bgr2Gray);
+
+                VectorOfPointF corners = new VectorOfPointF();
+                bool found = CvInvoke.FindChessboardCorners(gray, patternSize, corners,
+                    CalibCbType.AdaptiveThresh | CalibCbType.NormalizeImage);
+
+                if (found)
+                {
+                    CvInvoke.CornerSubPix(gray, corners, new Size(11, 11), new Size(-1, -1),
+                        new MCvTermCriteria(30, 0.01));
+
+                    imagePoints.Add(corners);
+                    objectPoints.Add(objPts);
+
+                    CvInvoke.DrawChessboardCorners(img, patternSize, corners, found);
+                    CvInvoke.Imshow("Corners", img);
+                    CvInvoke.WaitKey(100);
+
+                    phtWithCorners++;
+                    MessageBox.Show("FOUND CORNERS - " + imagePath);
+                }
+                else
+                {
+                    MessageBox.Show("NOT FOUND CORNERS - " + imagePath);
+                }
+            }
+
+            MessageBox.Show(phtWithCorners.ToString());
+
+            CvInvoke.DestroyAllWindows();
+
+
+
+            if (objectPoints.Count < 3)
+            {
+                MessageBox.Show("–ù–µ–¥–æ—Å—Ç–∞—Ç–æ—á–Ω–æ –∫–∞–¥—Ä–æ–≤ —Å –Ω–∞–π–¥–µ–Ω–Ω—ã–º–∏ —É–≥–ª–∞–º–∏ –¥–ª—è –∫–∞–ª–∏–±—Ä–æ–≤–∫–∏!");
+                return;
+            }
+
+            MCvPoint3D32f[][] objectPointsArray = objectPoints
+                .Select(v => v.ToArray())
+                .ToArray();
+
+            PointF[][] imagePointsArray = imagePoints
+                .Select(v => v.ToArray())
+                .ToArray();
+
+            Size imageSize;
+            using (Mat sample = CvInvoke.Imread(images[0], ImreadModes.AnyColor))
+            {
+                imageSize = sample.Size;
+            }
+
+            Mat cameraMatrix = new Mat(3, 3, DepthType.Cv64F, 1);
+            Mat distCoeffs = new Mat(1, 8, DepthType.Cv64F, 1);
+
+            MCvTermCriteria term = new MCvTermCriteria(30, 1e-6);
+
+            Mat[] rvecs, tvecs;
+            double reprojectionError = CvInvoke.CalibrateCamera(
+                objectPointsArray,
+                imagePointsArray,
+                imageSize,
+                cameraMatrix,
+                distCoeffs,
+                CalibType.RationalModel,
+                term,
+                out rvecs,
+                out tvecs
+            );
+
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("=== –†–ï–ó–£–õ–¨–¢–ê–¢ –ö–ê–õ–ò–ë–†–û–í–ö–ò ===");
+            sb.AppendLine($"–°—Ä–µ–¥–Ω—è—è –æ—à–∏–±–∫–∞ —Ä–µ–ø—Ä–æ–µ–∫—Ü–∏–∏: {reprojectionError:F6}\n");
+
+            sb.AppendLine("–ú–∞—Ç—Ä–∏—Ü–∞ –∫–∞–º–µ—Ä—ã (Camera Matrix):");
+            sb.AppendLine(MatrixToString(cameraMatrix));
+            sb.AppendLine();
+
+            sb.AppendLine("–ö–æ—ç—Ñ—Ñ–∏—Ü–∏–µ–Ω—Ç—ã –¥–∏—Å—Ç–æ—Ä—Å–∏–∏ (Distortion Coeffs):");
+            sb.AppendLine(MatrixToString(distCoeffs));
+
+          //  Clipboard.SetText(sb.ToString());
+            MessageBox.Show(sb.ToString(), "–†–µ–∑—É–ª—å—Ç–∞—Ç—ã –∫–∞–ª–∏–±—Ä–æ–≤–∫–∏");
+
+
+        }
+
+
+        private string MatrixToString(Mat mat)
+        {
+            var data = new double[mat.Rows * mat.Cols];
+            mat.CopyTo(data);
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < mat.Rows; i++)
+            {
+                for (int j = 0; j < mat.Cols; j++)
+                {
+                    sb.Append($"{data[i * mat.Cols + j],10:F6} ");
+                }
+                sb.AppendLine();
+            }
+
+            return sb.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            /*PointF targetPx = new PointF(1, 1); // –ø–∏–∫—Å–µ–ª–∏ —Ü–µ–ª–∏
+            var (yaw, pitch) = GetAnglesFromPixel(targetPx);
+            MessageBox.Show($"Yaw: {yaw:F2}¬∞, Pitch: {pitch:F2}¬∞");*/
+
+            //640w 480h
+
+            StringBuilder sb = new StringBuilder();
+
+            for (int w = 0; w != 640; w= w + 80)
+            {
+                for (int h = 0; h != 480; h= h + 80)
+                {
+                    PointF targetPx = new PointF(w,h); 
+                    var (yaw, pitch) = GetAnglesFromPixel(targetPx);
+                    sb.AppendLine($"X = {w}, Y = {h}. Yaw = {Math.Round(yaw,3)}, Pitch = {Math.Round(pitch,3)}");
+                }
+            }
+
+            Clipboard.SetText(sb.ToString());
+            MessageBox.Show(sb.ToString(), "–û—Ç–æ–±—Ä–∞–∂–µ–Ω–∏–µ –ª—É—á–µ–π");
+        }
+
+
+        private (double yaw, double pitch) GetAnglesFromPixel(PointF pixel)
+        {
+            // –ó–∞–¥–∞–µ–º –∫–æ–Ω—Å—Ç–∞–Ω—Ç–Ω—É—é –º–∞—Ç—Ä–∏—Ü—É –∫–∞–º–µ—Ä—ã
+            double[,] K = new double[3, 3]
+            {
+        { 492.279154,    0.0,      337.929005 },
+        {    0.0,    490.880685,   229.548998 },
+        {    0.0,       0.0,          1.0     }
+            };
+
+            // –ü—Ä–µ–æ–±—Ä–∞–∑—É–µ–º –≤ Matrix<double> –¥–ª—è —Ä–∞–±–æ—Ç—ã —Å CvInvoke
+            Matrix<double> Kmat = new Matrix<double>(K);
+            Matrix<double> Kinv = new Matrix<double>(3, 3);
+            CvInvoke.Invert(Kmat, Kinv, DecompMethod.LU);
+
+            // –í–µ–∫—Ç–æ—Ä –ø–∏–∫—Å–µ–ª—è (u, v, 1)
+            Matrix<double> uv1 = new Matrix<double>(new double[,] {
+        { pixel.X },
+        { pixel.Y },
+        { 1.0 }
+    });
+
+            // [xc, yc, 1] = K^-1 * [u, v, 1]
+            Matrix<double> xyz = new Matrix<double>(3, 1);
+            CvInvoke.Gemm(Kinv, uv1, 1.0, null, 0.0, xyz);
+
+            double x = xyz[0, 0] / xyz[2, 0];
+            double y = xyz[1, 0] / xyz[2, 0];
+
+            double angleXdeg = Math.Atan(x) * 180.0 / Math.PI; // –≥–æ—Ä–∏–∑–æ–Ω—Ç–∞–ª—å–Ω—ã–π —É–≥–æ–ª (yaw)
+            double angleYdeg = Math.Atan(y) * 180.0 / Math.PI; // –≤–µ—Ä—Ç–∏–∫–∞–ª—å–Ω—ã–π —É–≥–æ–ª (pitch)
+
+            return (angleXdeg, angleYdeg);
+        }
+
     }
 }

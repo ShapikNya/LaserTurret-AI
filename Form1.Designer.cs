@@ -1,6 +1,6 @@
 ﻿namespace DevTurret
 {
-    partial class Form1
+    partial class servoBtn
     {
         /// <summary>
         ///  Required designer variable.
@@ -37,6 +37,11 @@
             label2 = new Label();
             label3 = new Label();
             fpsLabel = new Label();
+            cameraTestBtn = new Button();
+            label4 = new Label();
+            button1 = new Button();
+            calibBtn = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // openBtn
@@ -132,11 +137,70 @@
             fpsLabel.TabIndex = 8;
             fpsLabel.Text = "FPS:";
             // 
-            // Form1
+            // cameraTestBtn
+            // 
+            cameraTestBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            cameraTestBtn.Location = new Point(583, 376);
+            cameraTestBtn.Name = "cameraTestBtn";
+            cameraTestBtn.Size = new Size(136, 41);
+            cameraTestBtn.TabIndex = 9;
+            cameraTestBtn.Text = "Open";
+            cameraTestBtn.UseVisualStyleBackColor = true;
+            cameraTestBtn.Click += cameraTestBtn_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label4.Location = new Point(576, 333);
+            label4.Name = "label4";
+            label4.Size = new Size(152, 28);
+            label4.TabIndex = 10;
+            label4.Text = "Camera FPS test";
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button1.Location = new Point(139, 51);
+            button1.Name = "button1";
+            button1.Size = new Size(124, 41);
+            button1.TabIndex = 11;
+            button1.Text = "GetPhoto";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // calibBtn
+            // 
+            calibBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            calibBtn.Location = new Point(314, 51);
+            calibBtn.Name = "calibBtn";
+            calibBtn.Size = new Size(124, 41);
+            calibBtn.TabIndex = 12;
+            calibBtn.Text = "Calibrate";
+            calibBtn.UseVisualStyleBackColor = true;
+            calibBtn.Click += calibBtn_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button2.Location = new Point(481, 51);
+            button2.Name = "button2";
+            button2.Size = new Size(124, 41);
+            button2.TabIndex = 13;
+            button2.Text = "Servo";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // servoBtn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
+            Controls.Add(calibBtn);
+            Controls.Add(button1);
+            Controls.Add(label4);
+            Controls.Add(cameraTestBtn);
             Controls.Add(fpsLabel);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -146,7 +210,7 @@
             Controls.Add(cameraBtn);
             Controls.Add(label1);
             Controls.Add(openBtn);
-            Name = "Form1";
+            Name = "servoBtn";
             Text = "Dev";
             ResumeLayout(false);
             PerformLayout();
@@ -163,5 +227,10 @@
         private Label label2;
         private Label label3;
         private Label fpsLabel;
+        private Button cameraTestBtn;
+        private Label label4;
+        private Button button1;
+        private Button calibBtn;
+        private Button button2;
     }
 }
