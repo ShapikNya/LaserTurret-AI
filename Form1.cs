@@ -411,7 +411,7 @@ namespace DevTurret
             sb.AppendLine("Коэффициенты дисторсии (Distortion Coeffs):");
             sb.AppendLine(MatrixToString(distCoeffs));
 
-          //  Clipboard.SetText(sb.ToString());
+            Clipboard.SetText(sb.ToString());
             MessageBox.Show(sb.ToString(), "Результаты калибровки");
 
 
@@ -446,13 +446,23 @@ namespace DevTurret
 
             StringBuilder sb = new StringBuilder();
 
-            for (int w = 0; w != 640; w= w + 80)
+            for (int w = 0; w != 640; w = w + 80)
             {
-                for (int h = 0; h != 480; h= h + 80)
+                for (int h = 0; h != 480; h = h + 80)
                 {
-                    PointF targetPx = new PointF(w,h); 
-                    var (yaw, pitch) = GetAnglesFromPixel(targetPx);
-                    sb.AppendLine($"X = {w}, Y = {h}. Yaw = {Math.Round(yaw,3)}, Pitch = {Math.Round(pitch,3)}");
+                    PointF targetPx = new PointF(w, h);
+                    var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
+                    sb.AppendLine($"Camera: X = {w}, Y = {h}. Yaw = {Math.Round(yawCam, 3)}, Pitch = {Math.Round(pitchCam, 3)}");
+
+
+
+                    // Смещение камеры относительно лазера: X, Y, Z
+                    double[] laserOffset = { 0.0, 0.3, -0.2 }; // 30 см вверх, 20 см назад
+
+                    var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, laserOffset);
+
+
+                    sb.AppendLine($"Lazer: X = {w}, Y = {h}. Yaw = {Math.Round(yawLaser, 3)}, Pitch = {Math.Round(pitchLaser, 3)}");
                 }
             }
 
@@ -463,38 +473,91 @@ namespace DevTurret
 
         private (double yaw, double pitch) GetAnglesFromPixel(PointF pixel)
         {
-            // Задаем константную матрицу камеры
+            // --- Матрица камеры ---
             double[,] K = new double[3, 3]
             {
-        { 492.279154,    0.0,      337.929005 },
-        {    0.0,    490.880685,   229.548998 },
-        {    0.0,       0.0,          1.0     }
+        { 492.279154, 0.0, 337.929005 },
+        { 0.0, 490.880685, 229.548998 },
+        { 0.0, 0.0, 1.0 }
             };
 
-            // Преобразуем в Matrix<double> для работы с CvInvoke
-            Matrix<double> Kmat = new Matrix<double>(K);
-            Matrix<double> Kinv = new Matrix<double>(3, 3);
-            CvInvoke.Invert(Kmat, Kinv, DecompMethod.LU);
+            // --- Коэффициенты дисторсии ---
+            double[] dist = { -0.241251, -1.747846, -0.012708, 0.014139, -18.669241,
+                      -0.218984, -1.957205, -18.235285 };
 
-            // Вектор пикселя (u, v, 1)
-            Matrix<double> uv1 = new Matrix<double>(new double[,] {
-        { pixel.X },
-        { pixel.Y },
-        { 1.0 }
-    });
+            // Преобразуем в Emgu-структуры
+            using (var cameraMatrix = new Matrix<double>(K))
+            using (var distCoeffs = new Matrix<double>(dist.Length, 1))
+            {
+                for (int i = 0; i < dist.Length; i++)
+                    distCoeffs[i, 0] = dist[i];
 
-            // [xc, yc, 1] = K^-1 * [u, v, 1]
-            Matrix<double> xyz = new Matrix<double>(3, 1);
-            CvInvoke.Gemm(Kinv, uv1, 1.0, null, 0.0, xyz);
+                // Оборачиваем входную точку в VectorOfPointF
+                using (var src = new Emgu.CV.Util.VectorOfPointF(new PointF[] { pixel }))
+                using (var dst = new Emgu.CV.Util.VectorOfPointF())
+                {
+                    // Корректируем пиксель с учётом дисторсии
+                    CvInvoke.UndistortPoints(src, dst, cameraMatrix, distCoeffs, null, cameraMatrix);
 
-            double x = xyz[0, 0] / xyz[2, 0];
-            double y = xyz[1, 0] / xyz[2, 0];
+                    // Получаем "распрямлённые" координаты
+                    PointF corrected = dst[0];
 
-            double angleXdeg = Math.Atan(x) * 180.0 / Math.PI; // горизонтальный угол (yaw)
-            double angleYdeg = Math.Atan(y) * 180.0 / Math.PI; // вертикальный угол (pitch)
+                    // --- Вычисляем углы ---
+                    Matrix<double> Kinv = new Matrix<double>(3, 3);
+                    CvInvoke.Invert(cameraMatrix, Kinv, DecompMethod.LU);
 
-            return (angleXdeg, angleYdeg);
+                    Matrix<double> uv1 = new Matrix<double>(new double[,] {
+                { corrected.X },
+                { corrected.Y },
+                { 1.0 }
+            });
+
+                    Matrix<double> xyz = new Matrix<double>(3, 1);
+                    CvInvoke.Gemm(Kinv, uv1, 1.0, null, 0.0, xyz);
+
+                    double x = xyz[0, 0] / xyz[2, 0];
+                    double y = xyz[1, 0] / xyz[2, 0];
+
+                    double angleXdeg = Math.Atan(x) * 180.0 / Math.PI; // yaw
+                    double angleYdeg = Math.Atan(y) * 180.0 / Math.PI; // pitch
+
+                    return (angleXdeg, angleYdeg);
+                }
+            }
         }
 
+        private (double yawLaser, double pitchLaser) GetLaserAnglesFromCameraAngles(
+    double yawCamDeg,
+    double pitchCamDeg,
+    double[] laserOffset) // [x, y, z] в метрах
+        {
+            // 1. Переводим углы камеры в радианы
+            double yawCam = yawCamDeg * Math.PI / 180.0;
+            double pitchCam = pitchCamDeg * Math.PI / 180.0;
+
+            // 2. Получаем направляющий вектор в системе камеры
+            double xCam = Math.Tan(yawCam);
+            double yCam = Math.Tan(pitchCam);
+            double zCam = 1.0; // направление вперёд
+
+            // 3. Преобразуем в систему лазера (R = I, только смещение)
+            double xLaser = xCam + laserOffset[0];
+            double yLaser = yCam + laserOffset[1];
+            double zLaser = zCam + laserOffset[2];
+
+            // 4. Вычисляем углы для моторов лазера
+            double yawLaser = Math.Atan2(xLaser, zLaser) * 180.0 / Math.PI;
+            double pitchLaser = Math.Atan2(yLaser, zLaser) * 180.0 / Math.PI;
+
+            return (yawLaser, pitchLaser);
+        }
+
+
+
+
+        private void servoBtn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

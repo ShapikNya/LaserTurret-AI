@@ -212,6 +212,7 @@
             Controls.Add(openBtn);
             Name = "servoBtn";
             Text = "Dev";
+            Load += servoBtn_Load;
             ResumeLayout(false);
             PerformLayout();
         }
