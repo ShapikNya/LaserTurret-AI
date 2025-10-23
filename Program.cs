@@ -10,6 +10,9 @@ using YoloDotNet.Enums;
 using YoloDotNet.Models;
 using YoloDotNet.Models.Interfaces;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.IO.Ports;
+using System.Threading;
+using System;
 
 Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.RealTime;
 Thread.CurrentThread.Priority = ThreadPriority.Highest;
@@ -54,6 +57,7 @@ yolo.OnDetection += (results) =>
         Console.WriteLine($"Detected {results.Count}, first: {first.First().Label.Name}, confidence: {first.First().Confidence}");
         Console.WriteLine($"width = {targetPx.X}, height = {targetPx.Y}");
         Console.WriteLine($"yaw = {yawLaser}, pich = {pitchLaser}");
+        //SendToArduino($"yaw={yawLaser};pitch={yawLaser}");
         Console.ResetColor();
         Console.WriteLine();
     }
@@ -158,6 +162,7 @@ async Task UserMode()
                     pitch = Convert.ToDouble(input.Substring(separatorIndex + 1));
                 }
                 Log($"set value: yaw={yaw};pitch={pitch}",ConsoleColor.DarkGray);
+                //SendToArduino($"yaw={yaw};pitch={pitch}");
                 Console.WriteLine();
             }
             catch (Exception ex)
@@ -185,7 +190,7 @@ async Task UserMode()
                 var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0.0, 0.3, -0.2 });
 
                 yaw = yawLaser; pitch = pitchLaser;
-
+                //SendToArduino($"yaw={yaw};pitch={pitch}");
                 Log($"set value: yaw={yawLaser};pitch={pitchLaser}. for width={width}, height={height}", ConsoleColor.DarkGray);
                 Console.WriteLine();
             }
@@ -323,4 +328,16 @@ double[] laserOffset) // [x, y, z] в метрах
     double pitchLaser = Math.Atan2(yLaser, zLaser) * 180.0 / Math.PI;
 
     return (yawLaser, pitchLaser);
+}
+
+
+void SendToArduino(string data)
+{
+    using (SerialPort serial = new SerialPort("COM3", 9600))
+    {
+        serial.Open();
+        serial.WriteLine(data);
+        serial.Close();
+    }
+    
 }

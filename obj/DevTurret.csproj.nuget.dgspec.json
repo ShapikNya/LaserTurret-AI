@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[3.119.0, )"
             },
+            "System.IO.Ports": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "YoloDotNet": {
               "target": "Package",
               "version": "[3.1.1, )"
