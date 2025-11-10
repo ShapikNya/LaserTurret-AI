@@ -8,12 +8,6 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="interfaces\" />
-    <Folder Include="log\" />
-    <Folder Include="models\" />
-  </ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Emgu.CV" Version="4.11.0.5746" />
 		<PackageReference Include="Emgu.CV.Bitmap" Version="4.11.0.5746" />

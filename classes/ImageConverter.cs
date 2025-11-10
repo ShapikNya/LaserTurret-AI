@@ -11,7 +11,7 @@ namespace DevTurret.classes
 {
     static class FrameConverter
     {
-        public static SKBitmap MatToSKBitmap(Mat frame, ref SKBitmap skBitmap)
+      /*  public static SKBitmap MatToSKBitmap(Mat frame, ref SKBitmap skBitmap)
         {
             int width = frame.Width;
             int height = frame.Height;
@@ -28,7 +28,7 @@ namespace DevTurret.classes
             }
 
             return skBitmap;
-        }
+        }*/
       
     }
         

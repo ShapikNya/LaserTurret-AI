@@ -14,12 +14,21 @@ using System.IO.Ports;
 using System.Threading;
 using System;
 
+//Инициализация COM-порта
+SerialPort serial;
+InitSerial(); //!!!ЗДЕСЬ МОЖНО ПОМЕНЯТЬ НОМЕР COM-ПОРТА
+
+//Выставление приоритета процесса
 Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.RealTime;
 Thread.CurrentThread.Priority = ThreadPriority.Highest;
 
+//Инициализация таймера (подсчёт fps)
 Stopwatch timer = new Stopwatch(); int frameCount = 0;
-Console.WriteLine("Инициализация Yolo...");
+
+/*Console.WriteLine("Инициализация Yolo...");
 using var yolo = new ObjectDetector();
+
+
 yolo.OnDetection += (results) =>
 {
     frameCount++;
@@ -42,30 +51,45 @@ yolo.OnDetection += (results) =>
         Console.WriteLine("No detection");
         Console.ResetColor();
     }
+
     else
     {
-        var first = results.Where(r => r.Label.Name == "person");
+        try
+        {
+            var first = results.Where(r => r.Label.Name == "person");
 
-        PointF targetPx = new PointF(first.First().BoundingBox.MidX, first.First().BoundingBox.MidY);
+            PointF targetPx = new PointF(first.First().BoundingBox.MidX, first.First().BoundingBox.MidY);
 
-        var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
+            var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
 
-        var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0.0, 0.3, -0.2 });
+            //
+            var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0.31, -0.14, 0 });
+            //
 
-        Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Green;
 
-        Console.WriteLine($"Detected {results.Count}, first: {first.First().Label.Name}, confidence: {first.First().Confidence}");
-        Console.WriteLine($"width = {targetPx.X}, height = {targetPx.Y}");
-        Console.WriteLine($"yaw = {yawLaser}, pich = {pitchLaser}");
-        //SendToArduino($"yaw={yawLaser};pitch={yawLaser}");
-        Console.ResetColor();
-        Console.WriteLine();
+            Console.WriteLine($"Detected {results.Count}, first: {first.First().Label.Name}, confidence: {first.First().Confidence}");
+            Console.WriteLine($"width = {targetPx.X}, height = {targetPx.Y}");
+            Console.WriteLine($"yaw = {yawLaser}, pich = {pitchLaser}");
+
+            SendToArduino($"{yawLaser+90} {yawLaser+90}");
+
+
+            Console.ResetColor();
+            Console.WriteLine();
+        }
+        catch
+        {
+            Console.WriteLine("No detection");
+        }
     }
-};
+};*/
 
 
 
 
+
+//основной цикл программы
 while (true)
 {
     await toStartPage();
@@ -77,8 +101,9 @@ while (true)
 
 
 
+                //НАВИГАЦИЯ
 
-async Task AImode()
+/*async Task AImode()
 {
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.Cyan;
@@ -118,8 +143,7 @@ async Task AImode()
                 break;   
         }
     }
-}
-
+}*/
 
 async Task UserMode()
 {
@@ -148,6 +172,7 @@ async Task UserMode()
     {
         var key = Console.ReadKey(true).Key;
 
+        //Ввод углов
         if (key == ConsoleKey.W)
         {
             sendMode = 0;
@@ -162,7 +187,9 @@ async Task UserMode()
                     pitch = Convert.ToDouble(input.Substring(separatorIndex + 1));
                 }
                 Log($"set value: yaw={yaw};pitch={pitch}",ConsoleColor.DarkGray);
-                //SendToArduino($"yaw={yaw};pitch={pitch}");
+
+                SendToArduino($"{yaw} {pitch}");
+
                 Console.WriteLine();
             }
             catch (Exception ex)
@@ -170,6 +197,7 @@ async Task UserMode()
                 Console.WriteLine($"{ex.Message}");
             }
         }
+        //Ввод координат объекта в px
         else if (key == ConsoleKey.E)
         {
             sendMode = 1;
@@ -186,12 +214,19 @@ async Task UserMode()
 
                 PointF targetPx = new PointF(width, height);
                 var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
-               
-                var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0.0, 0.3, -0.2 });
 
-                yaw = yawLaser; pitch = pitchLaser;
-                //SendToArduino($"yaw={yaw};pitch={pitch}");
-                Log($"set value: yaw={yawLaser};pitch={pitchLaser}. for width={width}, height={height}", ConsoleColor.DarkGray);
+
+                //!!!!Rоординаты в формате [-90;90]. 
+                var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0.0, 0.3, -0.2 }); //!!!! СМЕЩЕНИЕ ДВИГАТЕЛЕЙ ОТНОСИТЕЛЬНО КАМЕРЫ
+                                                                                                                                //!!!! X,Y,Z в м
+                //!!!Чтобы перейти к положительным числам [0,180], я добавлю +90 к координатам.
+                yaw = yawLaser+90; pitch = pitchLaser+90;
+
+
+                SendToArduino($"{yaw} {pitch}");
+
+
+                Log($"set value: yaw={yaw};pitch={pitch}. for width={width}, height={height}", ConsoleColor.DarkGray);
                 Console.WriteLine();
             }
             catch (Exception ex)
@@ -200,9 +235,11 @@ async Task UserMode()
             }
 
         }
-        else if (key == ConsoleKey.S)
+        //Повторная отправка
+        else if (key == ConsoleKey.S) 
         {
             Log($"sent to port: yaw={yaw};pitch={pitch}", ConsoleColor.Green);
+            SendToArduino($"{yaw} {pitch}");
             Console.WriteLine();
         }
         else if (key == ConsoleKey.Escape)
@@ -214,7 +251,7 @@ async Task UserMode()
 
 }
 
-
+//Отображение стартовой страницы в консоли
 async Task toStartPage()
 {
     Console.Clear();
@@ -226,29 +263,26 @@ async Task toStartPage()
 
     Console.WriteLine("Select mode:");
     Console.WriteLine("  1 - User Control");
-    Console.WriteLine("  2 - AI Control");
+    //Console.WriteLine("  2 - AI Control");
     Console.WriteLine("  ESC - Exit");
     Console.WriteLine();
 
     var key = Console.ReadKey(true).Key;
 
-
     switch (key)
     {
         case ConsoleKey.D1: { await UserMode(); break; }
-        case ConsoleKey.D2: { await AImode(); break; }
+        //case ConsoleKey.D2: { await AImode(); break; }
         case ConsoleKey.Escape: { Console.WriteLine("Exit..."); break; }
     }
 }
 
-void Log(string message, ConsoleColor color = ConsoleColor.Green)
-{
-    var oldColor = Console.ForegroundColor;
-    Console.ForegroundColor = color;
-    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] {message}");
-    Console.ForegroundColor = oldColor;
-}
 
+
+
+               //РАСЧЁТ УГЛОВ
+
+//Получение углов серво по пикселям
 (double yaw, double pitch) GetAnglesFromPixel(PointF pixel)
 {
     // --- Матрица камеры ---
@@ -304,6 +338,7 @@ void Log(string message, ConsoleColor color = ConsoleColor.Green)
     }
 }
 
+//Перевод углов из системы координат камеры в систему координат серво
 (double yawLaser, double pitchLaser) GetLaserAnglesFromCameraAngles(
 double yawCamDeg,
 double pitchCamDeg,
@@ -331,13 +366,42 @@ double[] laserOffset) // [x, y, z] в метрах
 }
 
 
+
+
+
+
+
+            //РАБОТА С ПОРТОМ
+
+//Открытие порта
+void InitSerial()
+{
+    serial = new SerialPort("COM4", 115200);
+    serial.NewLine = "\n";
+    serial.Open();
+    Thread.Sleep(2000); 
+}
+
+//Отправка данных на ардуино
 void SendToArduino(string data)
 {
-    using (SerialPort serial = new SerialPort("COM3", 9600))
+    if (serial != null && serial.IsOpen)
     {
-        serial.Open();
         serial.WriteLine(data);
-        serial.Close();
+        Console.WriteLine("отправлено: " + data);
     }
-    
+}
+
+
+
+
+            //ПРОЧЕЕ
+
+//Логирование информации в консоли
+void Log(string message, ConsoleColor color = ConsoleColor.Green)
+{
+    var oldColor = Console.ForegroundColor;
+    Console.ForegroundColor = color;
+    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] {message}");
+    Console.ForegroundColor = oldColor;
 }

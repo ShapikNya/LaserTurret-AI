@@ -15,9 +15,9 @@ using YoloDotNet.Models.Interfaces;
 
 namespace DevTurret.classes
 {
-    public class ObjectDetector : IDisposable
+    public class ObjectDetector //: IDisposable
     {
-        private readonly DetectorOptions _options;
+       /* private readonly DetectorOptions _options;
         private readonly Yolo _yolo;
         private readonly VideoCapture _capture;
         private SKBitmap _skBitmap;
@@ -80,6 +80,6 @@ namespace DevTurret.classes
             _yolo?.Dispose();
         }
 
-
+*/
     }
 }

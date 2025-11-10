@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ckvm6YOqltk=",
+  "dgSpecHash": "zWL0lXvQiJE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Shapi\\Desktop\\dev\\DevTurret.csproj",
+  "projectFilePath": "C:\\Users\\Shapi\\Desktop\\VKR\\dev\\DevTurret.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shapi\\.nuget\\packages\\emgu.cv\\4.11.0.5746\\emgu.cv.4.11.0.5746.nupkg.sha512",
     "C:\\Users\\Shapi\\.nuget\\packages\\emgu.cv.bitmap\\4.11.0.5746\\emgu.cv.bitmap.4.11.0.5746.nupkg.sha512",
