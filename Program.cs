@@ -148,8 +148,7 @@ async Task AImode()
 
 async Task UserMode()
 {
-    int width = 0, height = 0;
-    int sendMode = 0;
+    int pxX = 0, pxY = 0;
 
     string input = "";
 
@@ -164,29 +163,168 @@ async Task UserMode()
     Console.WriteLine("  W - Enter Angles.    ||  Ex: 12 -5");
     Console.WriteLine("  E - Enter Px.        ||  Ex: 640 480");
     Console.WriteLine("  S - Resend");
+    Console.WriteLine("  I - HotKeys");
     Console.WriteLine("  ESС - Exit");
     Console.WriteLine();
 
 
     while (true)
     {
-        var key = Console.ReadKey(true).Key;
+        var keyInfo = Console.ReadKey(true);
 
-        //Ввод углов
+        switch (keyInfo.Key)
+        {
+            case (ConsoleKey.W): //ВВОД УГЛОВ
+                {
+                    Console.WriteLine("Enter Angles:");
+                    try
+                    {
+                        arduinoData = Console.ReadLine();
+                        /* int separatorIndex = input.IndexOf(';');
+                         if (separatorIndex != -1)
+                         {
+                             yaw = Convert.ToDouble(input.Substring(0, separatorIndex));
+                             pitch = Convert.ToDouble(input.Substring(separatorIndex + 1));
+                         }
+                         Log($"set value: yaw={yaw};pitch={pitch}", ConsoleColor.DarkGray);*/
+
+                        SendToArduino(arduinoData);
+
+                        Console.WriteLine();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"{ex.Message}");
+                    }
+                    break;
+                }
+            case (ConsoleKey.E): //ВВОД В PX
+                {
+                    Console.WriteLine("Enter Px:");
+                    try
+                    {
+                        input = Console.ReadLine();
+                        int separatorIndex = input.IndexOf(' ');
+                        if (separatorIndex != -1)
+                        {
+                            pxX = Convert.ToInt32(input.Substring(0, separatorIndex));
+                            pxY = Convert.ToInt32(input.Substring(separatorIndex + 1));
+                        }
+
+                        arduinoData = GetServoAngels(pxX, pxY);
+                        SendToArduino(arduinoData);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"{ex.Message}");
+                    }
+                    break;
+                }
+            case (ConsoleKey.I): //СПИСОК ГОРЯЧИХ КЛАВИШ
+                {
+                    Console.WriteLine("=== Hotkeys ===\n");
+
+                    Console.WriteLine("Angles:");
+                    Console.WriteLine("{0,-10} -> {1}", "Shift + 0", "0 0");
+                    Console.WriteLine("{0,-10} -> {1}", "Shift + 1", "90 0");
+                    Console.WriteLine("{0,-10} -> {1}", "Shift + 2", "-90 0");
+                    Console.WriteLine("{0,-10} -> {1}", "Shift + 3", "0 90");
+                    Console.WriteLine("{0,-10} -> {1}", "Shift + 4", "0 -90");
+
+                    Console.WriteLine("\nPx:");
+                    Console.WriteLine("{0,-10} -> {1}", "Alt + 0", "320 240");
+                    Console.WriteLine("{0,-10} -> {1}", "Alt + 1", "640 240");
+                    Console.WriteLine("{0,-10} -> {1}", "Alt + 2", "0 240");
+                    Console.WriteLine("{0,-10} -> {1}", "Alt + 3", "320 480");
+                    Console.WriteLine("{0,-10} -> {1}", "Alt + 4", "320 0");
+
+                    Console.WriteLine("\n================\n");
+                    break;
+                }
+            case (ConsoleKey.S): //ПОВТОРНАЯ ОТПРАВКА
+                {
+                    SendToArduino(arduinoData);
+                    Console.WriteLine();
+                    break;
+                }
+            case (ConsoleKey.Escape): //ВЫХОД
+                {
+                    toStartPage();
+                    break;
+                }
+
+                                        //HOT KEYS
+            case ConsoleKey.D0 when (keyInfo.Modifiers & ConsoleModifiers.Shift) != 0: // Shift + 0
+                arduinoData = "0 0";
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+            case ConsoleKey.D1 when (keyInfo.Modifiers & ConsoleModifiers.Shift) != 0: // Shift + 1
+                arduinoData = "90 0";
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+            case ConsoleKey.D2 when (keyInfo.Modifiers & ConsoleModifiers.Shift) != 0: // Shift + 2
+                arduinoData = "-90 0";
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+            case ConsoleKey.D3 when (keyInfo.Modifiers & ConsoleModifiers.Shift) != 0: // Shift + 3
+                arduinoData = "0 90";
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+            case ConsoleKey.D4 when (keyInfo.Modifiers & ConsoleModifiers.Shift) != 0: // Shift + 4
+                arduinoData = "0 -90";
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+
+
+            case ConsoleKey.D0 when (keyInfo.Modifiers & ConsoleModifiers.Alt) != 0: // Alt + 0
+                arduinoData=GetServoAngels(320, 240);
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+            case ConsoleKey.D1 when (keyInfo.Modifiers & ConsoleModifiers.Alt) != 0: // Alt + 1
+                arduinoData = GetServoAngels(640, 240);
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+            case ConsoleKey.D2 when (keyInfo.Modifiers & ConsoleModifiers.Alt) != 0: // Alt + 2
+                arduinoData = GetServoAngels(0, 240);
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+            case ConsoleKey.D3 when (keyInfo.Modifiers & ConsoleModifiers.Alt) != 0: // Alt + 3
+                arduinoData = GetServoAngels(320, 480);
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+            case ConsoleKey.D4 when (keyInfo.Modifiers & ConsoleModifiers.Alt) != 0: // Alt + 4
+                arduinoData = GetServoAngels(320, 0);
+                SendToArduino(arduinoData);
+                Console.WriteLine();
+                break;
+
+        }
+
+       /* //Ввод углов
         if (key == ConsoleKey.W)
         {
-            sendMode = 0;
+
+
             try
             {
                 Console.WriteLine("Enter Angles:");
                 arduinoData = Console.ReadLine();
-               /* int separatorIndex = input.IndexOf(';');
+               *//* int separatorIndex = input.IndexOf(';');
                 if (separatorIndex != -1)
                 {
                     yaw = Convert.ToDouble(input.Substring(0, separatorIndex));
                     pitch = Convert.ToDouble(input.Substring(separatorIndex + 1));
                 }
-                Log($"set value: yaw={yaw};pitch={pitch}", ConsoleColor.DarkGray);*/
+                Log($"set value: yaw={yaw};pitch={pitch}", ConsoleColor.DarkGray);*//*
 
                 SendToArduino(arduinoData);
 
@@ -200,7 +338,6 @@ async Task UserMode()
         //Ввод координат объекта в px
         else if (key == ConsoleKey.E)
         {
-            sendMode = 1;
             Console.WriteLine("Enter Px:");
             try
             {
@@ -242,7 +379,7 @@ async Task UserMode()
         {
             toStartPage();
             break;
-        }
+        }*/
     }
 
 }
@@ -363,6 +500,15 @@ double[] laserOffset) // [x, y, z] в метрах
     return (yawLaser, pitchLaser);
 }
 
+
+string GetServoAngels(int x, int y)
+{
+    PointF targetPx = new PointF(x, y);
+    var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
+    var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0, 0, 0 });
+    string arduinoData = Convert.ToInt32(yawLaser).ToString() + " " + Convert.ToInt32(pitchLaser).ToString();
+    return arduinoData;
+}
 
 
 //РАБОТА С ПОРТОМ
