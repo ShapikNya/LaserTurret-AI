@@ -1,20 +1,22 @@
 ﻿using DevTurret.classes;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
+using Emgu.CV.OCR;
 using SkiaSharp;
+using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO.Ports;
+using System.Threading;
 using YoloDotNet;
 using YoloDotNet.Core;
 using YoloDotNet.Enums;
 using YoloDotNet.Models;
 using YoloDotNet.Models.Interfaces;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.IO.Ports;
-using System.Threading;
-using System;
 
 string arduinoData="0 0";
+double[] laserOffset = { 0, 0, 0 };
 
 //Инициализация COM-порта
 SerialPort serial;
@@ -58,31 +60,43 @@ yolo.OnDetection += (results) =>
     {
         try
         {
+            /* var first = results.Where(r => r.Label.Name == "person");
+
+             PointF targetPx = new PointF(first.First().BoundingBox.MidX, first.First().BoundingBox.MidY);
+
+             var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
+
+             //
+             var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, laserOffset);
+             //
+
+             Console.ForegroundColor = ConsoleColor.Green;
+
+             Console.WriteLine($"AllDetections count: {results.Count}, person count: {first.Count()}, first person: confidence: {first.First().Confidence}");
+             Console.WriteLine($"width = {targetPx.X}, height = {targetPx.Y}");
+             Console.WriteLine($"yaw = {yawLaser}, pich = {pitchLaser}");
+
+             arduinoData = Convert.ToInt32(yawLaser).ToString() + " " + Convert.ToInt32(pitchLaser).ToString();
+             SendToArduino(arduinoData);
+
+             Console.ResetColor();
+             Console.WriteLine();*/
+
             var first = results.Where(r => r.Label.Name == "person");
 
             PointF targetPx = new PointF(first.First().BoundingBox.MidX, first.First().BoundingBox.MidY);
 
-            var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
-
-            //
-            var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0.31, -0.14, 0 });
-            //
-
-            Console.ForegroundColor = ConsoleColor.Green;
-
-            Console.WriteLine($"AllDetections count: {results.Count}, person count: {first.Count()}, first person: confidence: {first.First().Confidence}");
-            Console.WriteLine($"width = {targetPx.X}, height = {targetPx.Y}");
-            Console.WriteLine($"yaw = {yawLaser}, pich = {pitchLaser}");
-
-            SendToArduino($"{yawLaser} {pitchLaser}");
-
-            Console.ResetColor();
+            arduinoData = GetServoAngels(Convert.ToInt32(targetPx.X), Convert.ToInt32(targetPx.Y));
+            SendToArduino(arduinoData);
             Console.WriteLine();
+
         }
         catch
         {
             Console.WriteLine("No detection");
         }
+
+        Thread.Sleep(1000);
     }
 };
 
@@ -213,6 +227,7 @@ async Task UserMode()
 
                         arduinoData = GetServoAngels(pxX, pxY);
                         SendToArduino(arduinoData);
+                        Console.WriteLine();
                     }
                     catch (Exception ex)
                     {
@@ -308,78 +323,6 @@ async Task UserMode()
                 break;
 
         }
-
-       /* //Ввод углов
-        if (key == ConsoleKey.W)
-        {
-
-
-            try
-            {
-                Console.WriteLine("Enter Angles:");
-                arduinoData = Console.ReadLine();
-               *//* int separatorIndex = input.IndexOf(';');
-                if (separatorIndex != -1)
-                {
-                    yaw = Convert.ToDouble(input.Substring(0, separatorIndex));
-                    pitch = Convert.ToDouble(input.Substring(separatorIndex + 1));
-                }
-                Log($"set value: yaw={yaw};pitch={pitch}", ConsoleColor.DarkGray);*//*
-
-                SendToArduino(arduinoData);
-
-                Console.WriteLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"{ex.Message}");
-            }
-        }
-        //Ввод координат объекта в px
-        else if (key == ConsoleKey.E)
-        {
-            Console.WriteLine("Enter Px:");
-            try
-            {
-                input = Console.ReadLine();
-                int separatorIndex = input.IndexOf(' ');
-                if (separatorIndex != -1)
-                {
-                    width = Convert.ToInt32(input.Substring(0, separatorIndex));
-                    height = Convert.ToInt32(input.Substring(separatorIndex + 1));
-                }
-
-                PointF targetPx = new PointF(width, height);
-                var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
-
-
-                var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0, 0, 0 }); //!!!! СМЕЩЕНИЕ ДВИГАТЕЛЕЙ ОТНОСИТЕЛЬНО КАМЕРЫ
-                                                                                                                         //!!!! X,Y,Z в м
-                                                                                                                         //!!!Чтобы перейти к положительным числам [0,180], я добавлю +90 к координатам.
-                arduinoData = Convert.ToInt32(yawLaser).ToString()+" "+ Convert.ToInt32(pitchLaser).ToString();
-                Console.WriteLine($"arduinoData: {arduinoData}");
-
-                SendToArduino(arduinoData);
-
-                Console.WriteLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"{ex.Message}");
-            }
-
-        }
-        //Повторная отправка
-        else if (key == ConsoleKey.S)
-        {
-            SendToArduino(arduinoData);
-            Console.WriteLine();
-        }
-        else if (key == ConsoleKey.Escape)
-        {
-            toStartPage();
-            break;
-        }*/
     }
 
 }
@@ -505,8 +448,8 @@ string GetServoAngels(int x, int y)
 {
     PointF targetPx = new PointF(x, y);
     var (yawCam, pitchCam) = GetAnglesFromPixel(targetPx);
-    var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, new double[] { 0, 0, 0 });
-    string arduinoData = Convert.ToInt32(yawLaser).ToString() + " " + Convert.ToInt32(pitchLaser).ToString();
+    var (yawLaser, pitchLaser) = GetLaserAnglesFromCameraAngles(yawCam, pitchCam, laserOffset);
+    string arduinoData = (Convert.ToInt32(yawLaser)*(-1)).ToString() + " " + Convert.ToInt32(pitchLaser).ToString(); //ДОМНОЖИЛ НА -1
     return arduinoData;
 }
 
