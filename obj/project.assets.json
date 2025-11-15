@@ -328,7 +328,7 @@
           }
         }
       },
-      "runtime.android-arm.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.android-arm.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/libSystem.IO.Ports.Native.so": {
@@ -397,7 +397,7 @@
           }
         }
       },
-      "runtime.android-arm64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.android-arm64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -466,7 +466,7 @@
           }
         }
       },
-      "runtime.android-x64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.android-x64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -535,7 +535,7 @@
           }
         }
       },
-      "runtime.android-x86.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.android-x86.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -604,7 +604,7 @@
           }
         }
       },
-      "runtime.linux-arm.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.linux-arm.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -673,7 +673,7 @@
           }
         }
       },
-      "runtime.linux-arm64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.linux-arm64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -742,7 +742,7 @@
           }
         }
       },
-      "runtime.linux-bionic-arm64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.linux-bionic-arm64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -811,7 +811,7 @@
           }
         }
       },
-      "runtime.linux-bionic-x64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.linux-bionic-x64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -880,7 +880,7 @@
           }
         }
       },
-      "runtime.linux-musl-arm.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.linux-musl-arm.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -949,7 +949,7 @@
           }
         }
       },
-      "runtime.linux-musl-arm64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.linux-musl-arm64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -1018,7 +1018,7 @@
           }
         }
       },
-      "runtime.linux-musl-x64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.linux-musl-x64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -1087,7 +1087,7 @@
           }
         }
       },
-      "runtime.linux-x64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.linux-x64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -1156,7 +1156,7 @@
           }
         }
       },
-      "runtime.maccatalyst-arm64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.maccatalyst-arm64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -1225,7 +1225,7 @@
           }
         }
       },
-      "runtime.maccatalyst-x64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.maccatalyst-x64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -1307,28 +1307,28 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "dependencies": {
-          "runtime.android-arm.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.android-arm64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.android-x64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.android-x86.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.linux-arm.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.linux-arm64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.linux-bionic-arm64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.linux-bionic-x64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.linux-musl-arm.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.linux-musl-arm64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.linux-musl-x64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.linux-x64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.maccatalyst-arm64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.maccatalyst-x64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.osx-arm64.runtime.native.System.IO.Ports": "9.0.10",
-          "runtime.osx-x64.runtime.native.System.IO.Ports": "9.0.10"
+          "runtime.android-arm.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.android-arm64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.android-x64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.android-x86.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.linux-arm.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.linux-arm64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.linux-bionic-arm64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.linux-bionic-x64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.linux-musl-arm.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.linux-musl-arm64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.linux-musl-x64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.linux-x64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.maccatalyst-arm64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.maccatalyst-x64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.osx-arm64.runtime.native.System.IO.Ports": "10.0.0",
+          "runtime.osx-x64.runtime.native.System.IO.Ports": "10.0.0"
         }
       },
-      "runtime.osx-arm64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.osx-arm64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -1397,7 +1397,7 @@
           }
         }
       },
-      "runtime.osx-x64.runtime.native.System.IO.Ports/9.0.10": {
+      "runtime.osx-x64.runtime.native.System.IO.Ports/10.0.0": {
         "type": "package",
         "runtimeTargets": {
           "runtimes/android-arm/native/_._": {
@@ -1601,10 +1601,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.IO.Ports/9.0.10": {
+      "System.IO.Ports/10.0.0": {
         "type": "package",
         "dependencies": {
-          "runtime.native.System.IO.Ports": "9.0.10"
+          "runtime.native.System.IO.Ports": "10.0.0"
         },
         "compile": {
           "lib/net8.0/System.IO.Ports.dll": {
@@ -2192,18 +2192,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.android-arm.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "KUeHD0wRFCTS9QHantD5Cv/RzDzVY/mQP1Z/eKLtlX5A5SZvsqeomAoayPdh/QmgSzquoHeIDMAMp8VVU+Xzag==",
+    "runtime.android-arm.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "ehgGD1p2lNdYs/4xC1pqB8Cmuqq/c7YWOu+6YRZNpwgebcPyjzVNU2yjgBxHce4ER28hNT4DTeODr35xIHv+cw==",
       "type": "package",
-      "path": "runtime.android-arm.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.android-arm.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.android-arm.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.android-arm.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.android-arm.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/libSystem.IO.Ports.Native.so",
         "runtimes/android-arm64/native/_._",
@@ -2224,18 +2223,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.android-arm64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "b+z8JoBrZ5TMXiXeh0s+s9/uIVx6PmulEuMaN81JLM68aAb4DWHi7t5CL+8bWJhsFhd8VAYoZ9pi5miNTFPeuA==",
+    "runtime.android-arm64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "+LI5JP5YDzXvuYP5XHnEFURgGVb0misSYb2vYPcrTq7xH8EF8wp8N3fAU3IGJ2eeJ1KzvtVmsuQok+ZTrmooww==",
       "type": "package",
-      "path": "runtime.android-arm64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.android-arm64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.android-arm64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.android-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.android-arm64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/libSystem.IO.Ports.Native.so",
@@ -2256,18 +2254,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.android-x64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "K7u+/G2gPoRLNc974p1Tnp44VRLlpQWZrKEQofBTpyJZPgd46ayvXayqT4jyGodG4O6Q6+yY2pYUYlqv1K2l6w==",
+    "runtime.android-x64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "7wsbMw7Qaw5e2CittVwAO3Zub8ZNMG5fJrr3/8fVfMuyR1QaAYe0cbqmltTpstbiSK8G8yQDWCj3rJnre6ffXw==",
       "type": "package",
-      "path": "runtime.android-x64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.android-x64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.android-x64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.android-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.android-x64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2288,18 +2285,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.android-x86.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "TGT4P40ockzrZf/K46A3VAl2dC2PWAS6WhqqtZJbH5G7XgBMX/FoaoY6DtFtz6u7RVl4zhjdG3QWXEv/u/1Hlg==",
+    "runtime.android-x86.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "ZVKPUs3xVKzDQaVYnetP4BDuy1sdbtydaFZpiGIpmiczLfnVPqB0ddMShrJ1fQk1aM7tPcst/KzwUHjPqgijlQ==",
       "type": "package",
-      "path": "runtime.android-x86.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.android-x86.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.android-x86.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.android-x86.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.android-x86.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2320,18 +2316,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-arm.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "Y2EEaUtO1JolypkFcqgsDxjmOleHa7d9OxBY4Osw5vIdQpOfP0Qj30czQfkN7cZTQH8NxsSr5WawVbk5yFabFg==",
+    "runtime.linux-arm.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "IA5+Djaq6B6QRfO1x7qS0LoB7Cw/46c18zs98cP0Se+gpaUciJxSsBAl9PAPbfEIK5cADW5ecNvtGvNtk7S1Mg==",
       "type": "package",
-      "path": "runtime.linux-arm.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.linux-arm.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-arm.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.linux-arm.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.linux-arm.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2352,18 +2347,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-arm64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "nIFQGoz22wdgtmS4Ce+weqGUBh1kpO4XbNEgCU01+7P/+yZAb+gbRSeJUyUmCPhyW0S8FhX1xgJDH/SiJgP05Q==",
+    "runtime.linux-arm64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "G2udW9Ej7OYIPjgvcb+K6ooeU/84PqHnxMg8/vz1SHmCCLpEvCYS4W73MoL/Lqz28fJ1Pehy6cShp8DKKGbBPg==",
       "type": "package",
-      "path": "runtime.linux-arm64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.linux-arm64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-arm64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.linux-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.linux-arm64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2384,18 +2378,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-bionic-arm64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "jV3esGC4j69yPlRzj50EbJq4syweBm4rOWKYJ3nWCMbVzTW1YQ2o4QhiVjCDOEKEf6q5eVGEaa6fyVXQ/K95Hw==",
+    "runtime.linux-bionic-arm64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "yXj5BTjwpjnZhkyC1JZLbMdMh6tamF3qjac7DAHQa/qM8ICqjxK5F6duS3i0OnWPaZBZUKkpP1dyZ8FeL7GsKQ==",
       "type": "package",
-      "path": "runtime.linux-bionic-arm64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.linux-bionic-arm64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-bionic-arm64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.linux-bionic-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.linux-bionic-arm64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2416,18 +2409,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-bionic-x64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "UfoiSWuf75mYJPknRXSezDoFYaCp5dWoUjASjg6gQSa7FD2G59Mee6vMEzHFS+x8N+H8oNnL9TCIZUD4/8e/2Q==",
+    "runtime.linux-bionic-x64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "nxCe45MUNmsCLhgIn2Catvf25ipmHzTBoXUfkjsl97o2RJXl5PSjx2jiYvJIz8O9Zx7mRGBBtgvLtpLDm1Ci3g==",
       "type": "package",
-      "path": "runtime.linux-bionic-x64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.linux-bionic-x64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-bionic-x64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.linux-bionic-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.linux-bionic-x64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2448,18 +2440,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-musl-arm.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "CWwqjMVVtYiW4I9wk9YuUaSxxkPZKZ/BKj5ppAsIZv4X9u/dyh8+Qbj3Fly61uUXpGxXU4QFQhYuPi5pJTAOBA==",
+    "runtime.linux-musl-arm.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "PK0gGqX/FrLP+fv5c+56s36bqQu8umGt2h1L5ze1rqioYb1NErZg3D+zA4s45pHLDupJ7vmlvLo72DLFPAnzow==",
       "type": "package",
-      "path": "runtime.linux-musl-arm.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.linux-musl-arm.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-musl-arm.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.linux-musl-arm.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.linux-musl-arm.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2480,18 +2471,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-musl-arm64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "NxMtoYPV8lreQggsXWsXXRF/djycKieThc4O2kxGB6EgjsiRDuNdnbODV0lWGV6v4mn08uQvuOhmBP5ZYpVdkA==",
+    "runtime.linux-musl-arm64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "kGmMJHJIairC0znRxMY8l8dovr7mpqb1wTRT0k/H0pHUYMC0yWyBxPQ6Jhss/tevazLYJG+kfsNw8oouF2pyvQ==",
       "type": "package",
-      "path": "runtime.linux-musl-arm64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.linux-musl-arm64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-musl-arm64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.linux-musl-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.linux-musl-arm64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2512,18 +2502,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-musl-x64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "ZNQ/D4lUGxTbfGAZRWP4vp7tCLqvInit03YXAiFXDWh/DnMEosBjrwcu8vbWgSsF01DUbyZQai8lwAStIZWo8w==",
+    "runtime.linux-musl-x64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "dUvttlipSsyfqgmGkdzsBTSwDA92r7NIL860jIGlaZ31kY7vGGxa9EeR9Y//vj5JmIcRVMhoe69u2t1pITPHTQ==",
       "type": "package",
-      "path": "runtime.linux-musl-x64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.linux-musl-x64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-musl-x64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.linux-musl-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.linux-musl-x64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2544,18 +2533,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.linux-x64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "mOTksL8qwN9EiWz71Dzhc98iQhKmtHlWH5GbhiCJ+ES2ei1HLr2bXSNMrXRd5s0Wfzg6xeQmT5M9umcgtv8Bzg==",
+    "runtime.linux-x64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "BYU08iO5Ey9oGMxSXCrsmEHkT51SifbIL8yBCD7e59P90tZzxpzm89j+guGsb24+qbiwOlCQmpi10dgWn6VmWg==",
       "type": "package",
-      "path": "runtime.linux-x64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.linux-x64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-x64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.linux-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.linux-x64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2576,18 +2564,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.maccatalyst-arm64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "aKoLfCdLoQGhPh2VYBn6sn1kDuwgtXKJ4D2Ql/2WLCGCuXestpxLBS0JhSVBFSp1HrFdazj4aSwpYurtes+1Gg==",
+    "runtime.maccatalyst-arm64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "DGVYub3vzhIXntukgOH18NOs6O6Y0PivftW/DYJZQs4lrA/zIUWs7DFXdY4D+4dcJjKBweb5qp4uRIko/vtodQ==",
       "type": "package",
-      "path": "runtime.maccatalyst-arm64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.maccatalyst-arm64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.maccatalyst-arm64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.maccatalyst-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.maccatalyst-arm64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2608,18 +2595,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.maccatalyst-x64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "B+boSbUptH2fiKiUXBIu5hlQ3oH+nAdPY9TNmpU10nuoFW/DNz21fCXY3UOIz9oRXp5Ao2b7RlurgpBl0AgoOQ==",
+    "runtime.maccatalyst-x64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "h+H9WlpBbG1b3ZcnjaRdV1avmz1mOWvkjGoXlYh+brPPT3XpP2KWtTOLAz/3JpQe49LwGq+rOX8GwbzQvUpdkA==",
       "type": "package",
-      "path": "runtime.maccatalyst-x64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.maccatalyst-x64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.maccatalyst-x64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.maccatalyst-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.maccatalyst-x64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2654,34 +2640,32 @@
         "runtime.native.system.nuspec"
       ]
     },
-    "runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "7AzXN+J8PkTVctfymH+tEaAmj0wNKFPyACqp5cYff0DrHxnsQhv7xtRWxJRrQ0azOAFGR1mhWN4aM1QkbQQ0Rw==",
+    "runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "xL+e2TzXMx4Ts/TVo/v6MbNtKPc3OASCN1cHqVXzWdT+fOH9m4BM12SSXkp5clP5Rj955Vh/4Lj1faD+FGwjiQ==",
       "type": "package",
-      "path": "runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.native.system.io.ports.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.osx-arm64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "m+gRRrmCTwP30YiVnFeZg/zRWgzVcOlN28cIPMkK11C9UU60waLknTnRLlQUagIkWaCDifKJCB6wtEeca5QiMA==",
+    "runtime.osx-arm64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "UrTKcNTBfHCvwmMJHJotiY8FVcQu1mk73b+AsLmVlu0S3Z27VvwWgd3fcw1CjkqX45BoVYMCE3JNhIExIKSrzQ==",
       "type": "package",
-      "path": "runtime.osx-arm64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.osx-arm64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.osx-arm64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.osx-arm64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.osx-arm64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -2702,18 +2686,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.osx-x64.runtime.native.System.IO.Ports/9.0.10": {
-      "sha512": "89HgF1Oplzjomn0BLeqJxEC17d//zmbs7CMKT12ZvjvFMvpMFO8uQUZ9xRIh91rM0ByfbhSobe2IRezjpeDNlg==",
+    "runtime.osx-x64.runtime.native.System.IO.Ports/10.0.0": {
+      "sha512": "kggkJk7S8OcoOLa9OyrP2zQ/eStiKHOytWVK8lJuRckzcz52eUgDo66+d9n2KciukcNmeAbmSHEY6fh2n394Jg==",
       "type": "package",
-      "path": "runtime.osx-x64.runtime.native.system.io.ports/9.0.10",
+      "path": "runtime.osx-x64.runtime.native.system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "runtime.osx-x64.runtime.native.system.io.ports.9.0.10.nupkg.sha512",
+        "runtime.osx-x64.runtime.native.system.io.ports.10.0.0.nupkg.sha512",
         "runtime.osx-x64.runtime.native.system.io.ports.nuspec",
         "runtimes/android-arm/native/_._",
         "runtimes/android-arm64/native/_._",
@@ -3086,21 +3069,22 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.IO.Ports/9.0.10": {
-      "sha512": "jMvwu+NOk/+vlOzTp9vpxIeGq+yRA+3EbkmpLMs37AAy9cI8YlY/ntTHL00w26Tvu6cIkx0/TdjmeHm0l99Nqw==",
+    "System.IO.Ports/10.0.0": {
+      "sha512": "UT9dTPqoEjG5AuPu2NA29hBlNyW2bGIVv/CoV2I2IjIRRnAzbXHVRdVZG5NKfuWTLmpQZfAaEAWV9MSn3VDrtg==",
       "type": "package",
-      "path": "system.io.ports/9.0.10",
+      "path": "system.io.ports/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.IO.Ports.targets",
         "buildTransitive/net462/_._",
         "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.IO.Ports.targets",
+        "lib/net10.0/System.IO.Ports.dll",
+        "lib/net10.0/System.IO.Ports.xml",
         "lib/net462/System.IO.Ports.dll",
         "lib/net462/System.IO.Ports.xml",
         "lib/net8.0/System.IO.Ports.dll",
@@ -3109,15 +3093,19 @@
         "lib/net9.0/System.IO.Ports.xml",
         "lib/netstandard2.0/System.IO.Ports.dll",
         "lib/netstandard2.0/System.IO.Ports.xml",
+        "runtimes/unix/lib/net10.0/System.IO.Ports.dll",
+        "runtimes/unix/lib/net10.0/System.IO.Ports.xml",
         "runtimes/unix/lib/net8.0/System.IO.Ports.dll",
         "runtimes/unix/lib/net8.0/System.IO.Ports.xml",
         "runtimes/unix/lib/net9.0/System.IO.Ports.dll",
         "runtimes/unix/lib/net9.0/System.IO.Ports.xml",
+        "runtimes/win/lib/net10.0/System.IO.Ports.dll",
+        "runtimes/win/lib/net10.0/System.IO.Ports.xml",
         "runtimes/win/lib/net8.0/System.IO.Ports.dll",
         "runtimes/win/lib/net8.0/System.IO.Ports.xml",
         "runtimes/win/lib/net9.0/System.IO.Ports.dll",
         "runtimes/win/lib/net9.0/System.IO.Ports.xml",
-        "system.io.ports.9.0.10.nupkg.sha512",
+        "system.io.ports.10.0.0.nupkg.sha512",
         "system.io.ports.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4095,7 +4083,7 @@
       "Emgu.CV.Bitmap >= 4.11.0.5746",
       "Emgu.CV.runtime.windows >= 4.11.0.5746",
       "SkiaSharp >= 3.119.0",
-      "System.IO.Ports >= 9.0.10",
+      "System.IO.Ports >= 10.0.0",
       "YoloDotNet >= 3.1.1"
     ]
   },
@@ -4167,7 +4155,7 @@
           },
           "System.IO.Ports": {
             "target": "Package",
-            "version": "[9.0.10, )"
+            "version": "[10.0.0, )"
           },
           "YoloDotNet": {
             "target": "Package",

@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev\\classes\\detectoroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\detectoroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev\\classes\\objectdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\objectdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev\\classes\\imageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\imageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|c:\\users\\shapi\\desktop\\dev\\classes\\detectoroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C605224F-3C6C-41CA-9F14-F6748E805CA1}|DevTurret.csproj|solutionrelative:classes\\detectoroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,33 +42,45 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DetectorOptions.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\DetectorOptions.cs",
+              "RelativeDocumentMoniker": "classes\\DetectorOptions.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\DetectorOptions.cs",
+              "RelativeToolTip": "classes\\DetectorOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T17:38:08.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ObjectDetector.cs",
+              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ObjectDetector.cs",
+              "RelativeDocumentMoniker": "classes\\ObjectDetector.cs",
+              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ObjectDetector.cs",
+              "RelativeToolTip": "classes\\ObjectDetector.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAMwEEAAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T23:45:32.075Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAANkAAAAAAAAAAAA1wD4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAADYBAAAAAAAAAAAIwE0BAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-22T22:04:51.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ObjectDetector.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ObjectDetector.cs",
-              "RelativeDocumentMoniker": "classes\\ObjectDetector.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ObjectDetector.cs",
-              "RelativeToolTip": "classes\\ObjectDetector.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAASwEMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T23:45:32.075Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ImageConverter.cs",
               "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\ImageConverter.cs",
               "RelativeDocumentMoniker": "classes\\ImageConverter.cs",
@@ -76,21 +88,7 @@
               "RelativeToolTip": "classes\\ImageConverter.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAuwA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T23:54:31.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DetectorOptions.cs",
-              "DocumentMoniker": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\DetectorOptions.cs",
-              "RelativeDocumentMoniker": "classes\\DetectorOptions.cs",
-              "ToolTip": "C:\\Users\\Shapi\\Desktop\\dev\\classes\\DetectorOptions.cs",
-              "RelativeToolTip": "classes\\DetectorOptions.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwA4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T23:44:05.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T23:54:31.38Z"
             }
           ]
         }
